@@ -98,7 +98,7 @@ const Page = () => {
                   </h4>
                   <h2 className="pb-[20px] text-[20px] lg:text-[20px] md:text-[14px] sm:text-[12px] text-[10px] font-semibold">
                     We design your website or brand identity to reflect your
-                    brand's strategy, identity and goals so that you occupy a
+                    brand&apos;s strategy, identity and goals so that you occupy a
                     prominent position in the market.
                   </h2>
                 </div>
@@ -210,7 +210,7 @@ const Page = () => {
   <div className="w-full px-4 lg:hidden">
     <div className="p-6   bg-black bg-opacity-50">
       <h2 className="mb-4 text-xl font-bold text-gray-100">
-        Let's start a web design conversation.
+      Let&apos;s start a web design conversation.
       </h2>
       <p className="mb-4 text-gray-300 text-md">
         Like what you see? Start working with us by providing your needs and details.
