@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -10,18 +10,18 @@ const services = [
   {
     id: 1,
     title: "Auditing & Pen Testing",
-    image:"/img/serviceimg/auditing.jpeg",
+    image: "/img/serviceimg/auditing.jpeg",
   },
 
   {
     id: 2,
     title: "Remote Mointoring",
-    image:"/img/serviceimg/remote.jpeg",
+    image: "/img/serviceimg/remote.jpeg",
   },
   {
     id: 3,
     title: "Network Infrastructure",
-    image:"/img/serviceimg/network.png",
+    image: "/img/serviceimg/network.png",
   },
 ];
 
@@ -103,8 +103,7 @@ const Page = () => {
           <div
             className="et_parallax_bg absolute inset-0 w-full"
             style={{
-              backgroundImage:
-                'url("/img/serviceimg/bgcloud.jpg")',
+              backgroundImage: 'url("/img/serviceimg/bgcloud.jpg")',
             }}
           >
             <div
@@ -428,16 +427,16 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-               
-                                                      <div className="relative w-full h-64"> 
-                                                      <Image
-                                                        src={service.image}
-                                                        alt={service.title}
-                                                        layout="fill"
-                                                        objectFit="cover"
-                                                        className="rounded-lg"
-                                                      />
-                                                    </div>
+
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}

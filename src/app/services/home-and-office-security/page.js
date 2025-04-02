@@ -6,21 +6,43 @@ import { motion } from "framer-motion";
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const MotionH1 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h1),
+  { ssr: false }
+);
+const MotionH2 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h2),
+  { ssr: false }
+);
+const MotionH3 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h3),
+  { ssr: false }
+);
+const MotionH4 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h4),
+  { ssr: false }
+);
+const MotionDiv = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.div),
+  { ssr: false }
+);
 const services = [
   {
     id: 1,
     title: "Smart Homes",
-    image:"/img/serviceimg/smarthome.jpg",
+    image: "/img/serviceimg/smarthome.jpg",
   },
   {
     id: 2,
     title: "Drone Cinematography",
-    image:"/img/serviceimg/dron.png",
+    image: "/img/serviceimg/dron.png",
   },
   {
     id: 3,
     title: "Remote Mointoring",
-    image:"/img/serviceimg/remote.jpeg",
+    image: "/img/serviceimg/remote.jpeg",
   },
 ];
 
@@ -102,8 +124,7 @@ const Page = () => {
           <div
             className="et_parallax_bg absolute inset-0 w-full"
             style={{
-              backgroundImage:
-                'url("/img/serviceimg/bghomesecurity.jpg")',
+              backgroundImage: 'url("/img/serviceimg/bghomesecurity.jpg")',
             }}
           >
             <div
@@ -121,7 +142,7 @@ const Page = () => {
             {/* Left Content Column */}
             <div className="w-full lg:w-3/6 lg:mb-0">
               <div className="lg:mr-[30px]">
-                <motion.h1
+                <MotionH1
                   {...textAnimation}
                   className="relative inline-block mt-5 text-[22px] font-medium text-white font-montserrat"
                 >
@@ -146,42 +167,42 @@ const Page = () => {
                       strokeWidth="2"
                     />
                   </svg>
-                </motion.h1>
+                </MotionH1>
 
-                <motion.h1
+                <MotionH1
                   {...textAnimation}
                   className="pb-4 text-[43px] font-extrabold text-white leading-[1.3em] font-montserrat tracking-tight mb-2 mt-3 shadow-md"
                 >
                   Home & Office Security
-                </motion.h1>
+                </MotionH1>
 
-                <motion.div {...textAnimation}>
+                <MotionDiv {...textAnimation}>
                   <h2 className="pb-4 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-bold font-montserrat">
                     <p className="text-shadow-md">
                       Looking to keep your home or office safe? Look no further
                       than our customized security solutions
                     </p>
                   </h2>
-                </motion.div>
+                </MotionDiv>
 
-                <motion.h3
+                <MotionH3
                   {...textAnimation}
                   className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
                 >
                   We deliver customized security solutions, so you can have
                   assurance and peace of mind.
-                </motion.h3>
+                </MotionH3>
 
-                <motion.h2
+                <MotionH2
                   {...textAnimation}
                   className="mb-9 mt-5 text-[20px] lg:text-[25px] md:text-[18px] sm:text-[16px] font-light text-white leading-[1.8em] drop-shadow-md"
                 >
                   Our security solutions are from only the best providers in the
                   security business. Surveillance? No Problem. We have you
                   Covered.
-                </motion.h2>
+                </MotionH2>
 
-                <motion.h4
+                <MotionH4
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
@@ -189,9 +210,9 @@ const Page = () => {
                   className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
                 >
                   Capabilities
-                </motion.h4>
+                </MotionH4>
 
-                <motion.h2
+                <MotionH2
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1 }}
@@ -200,12 +221,12 @@ const Page = () => {
                 >
                   Physical Security Delivered. These solutions will provide
                   peace of mind for your home or business.
-                </motion.h2>
+                </MotionH2>
               </div>
             </div>
 
             {/* Right Side Column */}
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
@@ -230,7 +251,7 @@ const Page = () => {
                   </span>
                 </a>
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
 
           {/* Services Section */}
@@ -412,15 +433,15 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-                                      <div className="relative w-full h-64"> 
-                                         <Image
-                                           src={service.image}
-                                           alt={service.title}
-                                           layout="fill"
-                                           objectFit="cover"
-                                           className="rounded-lg"
-                                         />
-                                       </div>
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}

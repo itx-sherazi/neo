@@ -2,25 +2,47 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const MotionH1 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h1),
+  { ssr: false }
+);
+const MotionH2 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h2),
+  { ssr: false }
+);
+const MotionH3 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h3),
+  { ssr: false }
+);
+const MotionH4 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h4),
+  { ssr: false }
+);
+const MotionDiv = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.div),
+  { ssr: false }
+);
 const services = [
   {
     id: 1,
     title: "Web Design and Hosting",
-    image:"/img/serviceimg/webdesign.webp",
+    image: "/img/serviceimg/webdesign.webp",
   },
   {
     id: 2,
     title: "Drone Cinematography",
-    image:"/img/serviceimg/dron.png",
+    image: "/img/serviceimg/dron.png",
   },
   {
     id: 3,
     title: "Network Infrastructure",
-    image:"/img/serviceimg/network.png",
+    image: "/img/serviceimg/network.png",
   },
 ];
 
@@ -102,8 +124,7 @@ const Page = () => {
           <div
             className="et_parallax_bg absolute inset-0 w-full"
             style={{
-              backgroundImage:
-                'url("/img/serviceimg/bgauditing.jpg")',
+              backgroundImage: 'url("/img/serviceimg/bgauditing.jpg")',
               height: "1391.76px",
               transform: "translate(0px, 100px)",
               backgroundPosition: "top left",
@@ -126,14 +147,13 @@ const Page = () => {
             {/* Left Content Column */}
             <div className="w-full lg:w-3/6 lg:mb-0">
               <div className="lg:mr-[30px]">
-                <motion.h1
+                <MotionH1
                   {...textAnimation}
                   className="relative inline-block mt-5 text-[30px] text-white"
                 >
                   <span className="relative z-10 pr-2">
                     COMPLIANCE SIMPLIFIED
                   </span>
-
                   <svg
                     className="absolute bottom-[-10px] left-0 text-emerald-500"
                     style={{
@@ -158,38 +178,38 @@ const Page = () => {
                       strokeWidth="2"
                     />
                   </svg>
-                </motion.h1>
+                </MotionH1>
 
-                <motion.h1
+                <MotionH1
                   {...textAnimation}
-                  className="pb-4 text-[28px]   text-[#3e413e] leading-[1.3em]  mb-2 mt-10  "
+                  className="pb-4 text-[28px] text-[#3e413e] leading-[1.3em] mb-2 mt-10"
                 >
                   Auditing & Pen Testing
-                </motion.h1>
+                </MotionH1>
 
-                <motion.div {...textAnimation}>
-                  <h2 className="pb-4 text-[20px] text-[#3e413e] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em]  font-semibold font-montserrat">
+                <MotionDiv {...textAnimation}>
+                  <h2 className="pb-4 text-[20px] text-[#3e413e] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] font-semibold font-montserrat">
                     <p className="text-shadow-md font-bold">
                       Are your Devices and Network Complaint? Bring our Pen
                       Testing Expertise to verify Compliance, and deliver a full
                       audit report.
                     </p>
                   </h2>
-                </motion.div>
+                </MotionDiv>
 
-                <motion.h3
+                <MotionH3
                   {...textAnimation}
-                  className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-semibold text-[#3e413e] leading-[1.3em] text-shadow-md my-2 font-montserrat"
+                  className="pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-semibold text-[#3e413e] leading-[1.3em] text-shadow-md my-2 font-montserrat"
                 >
                   95% of businesses have no idea their network has the ability
                   to be compromised in a matter of minutes. Let us deliver a
                   full audit and pen test your network and devices to ensure you
                   can protect your data.
-                </motion.h3>
+                </MotionH3>
 
-                <motion.h2
+                <MotionH2
                   {...textAnimation}
-                  className="mb-9 mt-5 text-[20px] lg:text-[24px] md:text-[18px] sm:text-[16px]  text-[#3e413e] "
+                  className="mb-9 mt-5 text-[20px] lg:text-[24px] md:text-[18px] sm:text-[16px] text-[#3e413e]"
                 >
                   Our Pen Testers are certified to deliver results from ensuring
                   CVEs are not present, to recommending solutions for weak
@@ -197,9 +217,9 @@ const Page = () => {
                   <p className="text-white text-sm italic">
                     (Results may vary *)
                   </p>
-                </motion.h2>
+                </MotionH2>
 
-                <motion.h4
+                <MotionH4
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
@@ -207,9 +227,9 @@ const Page = () => {
                   className="pb-5 text-[29px] lg:text-[18px] md:text-[26px] sm:text-[22px] text-[#3e413e]"
                 >
                   Capabilities
-                </motion.h4>
+                </MotionH4>
 
-                <motion.h2
+                <MotionH2
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1 }}
@@ -218,20 +238,19 @@ const Page = () => {
                 >
                   Full open source pen testing delivered. Need more? We can
                   deliver Qualys Scans too.
-                </motion.h2>
+                </MotionH2>
               </div>
             </div>
 
             {/* Right Side Column */}
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-full  px-6  mt-1 lg:w-[34%]  lg:block hidden"
+              className="w-full px-6 mt-1 lg:w-[34%] lg:block hidden"
             >
-              <div className=" mb-6 rounded bg-black/40 h-[230px] bg-opacity-50">
-                <h2 className="mb-3 text-2xl  text-[#3e413e]">
-                  {" "}
+              <div className="mb-6 rounded bg-black/40 h-[230px] bg-opacity-50">
+                <h2 className="mb-3 text-2xl text-[#3e413e]">
                   Looking for Audit or Pen Test Reports?
                 </h2>
                 <p className="mb-4 mt-4 text-[#3e413e] font-secondary">
@@ -241,16 +260,15 @@ const Page = () => {
                 </p>
                 <a
                   href="#"
-                  className=" py-2  w-[100px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-white group relative 
-     hover:bg-white/15 hover:border-[#444844] hover:w-[180px]"
+                  className="py-2 w-[100px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-white group relative hover:bg-white/15 hover:border-[#444844] hover:w-[180px]"
                 >
-                  <span className="flex justify-center items-center font-semibold ">
+                  <span className="flex justify-center items-center font-semibold">
                     <span className="pl-5">INQUIRE</span>
                     <AiOutlineRight className="h-[20px] font-semibold w-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </span>
                 </a>
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
 
           {/* Services Section */}
@@ -445,15 +463,15 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-                                       <div className="relative w-full h-64"> 
-                                       <Image
-                                         src={service.image}
-                                         alt={service.title}
-                                         layout="fill"
-                                         objectFit="cover"
-                                         className="rounded-lg"
-                                       />
-                                     </div>
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl  text-[#3e413e] tracking-tight leading-tight">
                         {service.title}

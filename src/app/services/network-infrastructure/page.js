@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -10,17 +10,17 @@ const services = [
   {
     id: 1,
     title: "Cloud Migration Strategies",
-    image:"/img/serviceimg/cloud.png",
+    image: "/img/serviceimg/cloud.png",
   },
   {
     id: 2,
     title: "Auditing & Pen Testing",
-    image:"/img/serviceimg/auditing.jpeg",
+    image: "/img/serviceimg/auditing.jpeg",
   },
   {
     id: 3,
     title: "Remote Mointoring",
-    image:"/img/serviceimg/remote.jpeg",
+    image: "/img/serviceimg/remote.jpeg",
   },
 ];
 
@@ -102,8 +102,7 @@ const Page = () => {
           <div
             className="et_parallax_bg absolute inset-0 w-full"
             style={{
-              backgroundImage:
-                'url("/img/serviceimg/bgnetwork.jpg")',
+              backgroundImage: 'url("/img/serviceimg/bgnetwork.jpg")',
               height: "1391.76px",
               transform: "translate(0px, 100px)",
               backgroundPosition: "top left",
@@ -126,43 +125,39 @@ const Page = () => {
             {/* Left Content Column */}
             <div className="w-full lg:w-3/6 lg:mb-0">
               <div className="lg:mr-[30px]">
-              <motion.h1
-  {...textAnimation}
-  className="relative inline-block mt-5 text-[30px] text-white"
->
-  <span className="relative z-10 pr-2">
-    SCALE YOUR NETWORK
-  </span>
+                <motion.h1
+                  {...textAnimation}
+                  className="relative inline-block mt-5 text-[30px] text-white"
+                >
+                  <span className="relative z-10 pr-2">SCALE YOUR NETWORK</span>
 
-  <svg
-    className="absolute bottom-[-5px] left-0 text-emerald-500"
-    style={{
-      width: "100%", 
-      height: "40px",
-      overflow: "visible",
-      pointerEvents: "none",
-    }}
-    viewBox="0 0 330 40"
-    fill="none"
-    stroke="#20c18c"
-    strokeWidth="2"
-  >
-    <path
-      d="M0.22737077718822152 35.8423003929006 C103.55308450815535 38.863788085259365, 202.35962496434277 39.056181454784905, 326.614179537502 38.77032914315917"
-      fill="none"
-      stroke="#20c18c"
-      strokeWidth="2"
-    />
-    <path
-      d="M327.761994202772 36.38281702867969 C254.23930575096875 35.62600284562649, 178.8093297682477 36.285009502311475, 0.07517523194039684 39.240395424656754"
-      fill="none"
-      stroke="#20c18c"
-      strokeWidth="2"
-    />
-  </svg>
-</motion.h1>
-
-
+                  <svg
+                    className="absolute bottom-[-5px] left-0 text-emerald-500"
+                    style={{
+                      width: "100%",
+                      height: "40px",
+                      overflow: "visible",
+                      pointerEvents: "none",
+                    }}
+                    viewBox="0 0 330 40"
+                    fill="none"
+                    stroke="#20c18c"
+                    strokeWidth="2"
+                  >
+                    <path
+                      d="M0.22737077718822152 35.8423003929006 C103.55308450815535 38.863788085259365, 202.35962496434277 39.056181454784905, 326.614179537502 38.77032914315917"
+                      fill="none"
+                      stroke="#20c18c"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M327.761994202772 36.38281702867969 C254.23930575096875 35.62600284562649, 178.8093297682477 36.285009502311475, 0.07517523194039684 39.240395424656754"
+                      fill="none"
+                      stroke="#20c18c"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </motion.h1>
 
                 <motion.h1
                   {...textAnimation}
@@ -172,24 +167,32 @@ const Page = () => {
                 </motion.h1>
 
                 <motion.div {...textAnimation}>
-  <h2 className="pb-4 text-[38px] text-[#3e413e] lg:text-[30px] md:text-[16px] sm:text-[14px] font-bold font-montserrat text-shadow-md ">
-    Our engineers will analyze your current network and advise you on the deployment of infrastructure devices, services, and technologies.
-  </h2>
-</motion.div>
-
+                  <h2 className="pb-4 text-[38px] text-[#3e413e] lg:text-[30px] md:text-[16px] sm:text-[14px] font-bold font-montserrat text-shadow-md ">
+                    Our engineers will analyze your current network and advise
+                    you on the deployment of infrastructure devices, services,
+                    and technologies.
+                  </h2>
+                </motion.div>
 
                 <motion.h3
                   {...textAnimation}
                   className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-[#3e413e] leading-[1.3em] text-shadow-md my-2 font-montserrat"
                 >
-               Running a successful business requires stable, optimized, reliable, up-to-date technology. With the vast amount of options and the endless upgrades, we recommend the best to suit your needs. 
+                  Running a successful business requires stable, optimized,
+                  reliable, up-to-date technology. With the vast amount of
+                  options and the endless upgrades, we recommend the best to
+                  suit your needs.
                 </motion.h3>
 
                 <motion.h2
                   {...textAnimation}
                   className="mb-9 mt-5 text-[20px] lg:text-[24px] md:text-[18px] sm:text-[16px]  text-[#3e413e] "
                 >
-          We are here to provide expertise, from planning to implementation, ensuring the least downtime, greatest scalability, and security-centric deployment. Leave the network to us so you can focus on scaling your business, and leave worries at the door for intruders invading your network.
+                  We are here to provide expertise, from planning to
+                  implementation, ensuring the least downtime, greatest
+                  scalability, and security-centric deployment. Leave the
+                  network to us so you can focus on scaling your business, and
+                  leave worries at the door for intruders invading your network.
                 </motion.h2>
 
                 <motion.h4
@@ -209,10 +212,15 @@ const Page = () => {
                   viewport={{ once: false }}
                   className="pb-2 text-[18px] lg:text-[26px] md:text-[14px] sm:text-[12px] font-bold text-[#3e413e] leading-relaxed text-shadow-md"
                 >
-                 We have experience securing networks of all sizes. From small doctor&apos;s offices that require HIPPA compliance, to medium-large offices that can be subject to PCI auditing, we are here to ensure you are fully in compliance at the network layer.
-
+                  We have experience securing networks of all sizes. From small
+                  doctor&apos;s offices that require HIPPA compliance, to
+                  medium-large offices that can be subject to PCI auditing, we
+                  are here to ensure you are fully in compliance at the network
+                  layer.
                 </motion.h2>
-                <p className="italic text-xl">(Consultations highly recommended *)</p>
+                <p className="italic text-xl">
+                  (Consultations highly recommended *)
+                </p>
               </div>
             </div>
 
@@ -229,7 +237,8 @@ const Page = () => {
                   Looking for a network overhaul?
                 </h2>
                 <p className="mb-10 mt-8 text-[#3e413e] font-secondary">
-                Our team has implemented and optimized networks of all shapes and sizes to ensure business needs and deadlines are met.
+                  Our team has implemented and optimized networks of all shapes
+                  and sizes to ensure business needs and deadlines are met.
                 </p>
                 <a
                   href="#"
@@ -237,7 +246,7 @@ const Page = () => {
      hover:bg-white/15 hover:border-none hover:w-[280px]"
                 >
                   <span className="flex justify-center items-center font-bold ">
-                    <span >NETWORK PORTFOLIO</span>
+                    <span>NETWORK PORTFOLIO</span>
                     <AiOutlineRight className="h-[20px] font-semibold w-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </span>
                 </a>
@@ -247,91 +256,93 @@ const Page = () => {
 
           {/* Services Section */}
           <div className="md:pl-20 md:ml-6 md:pt-6 lg:mt-4 lg:mb-5">
-  <div className="grid grid-cols-1 md:flex md:gap-16">
-    {[
-      {
-        title: "Infrastructure Planning",
-        items: [
-          "Device Mapping",
-          "Floorplan Modeling",
-          "Wi-Fi Planning",
-          "Firewall Planning",
-          "Network Switch Planning",
-          "Cable Routing",
-        ],
-      },
-      {
-        title: "Implementation",
-        items: [
-          "Firewall Implementation",
-          "Switch Configuration",
-          "Wi-Fi Deployment",
-          "VLAN Implementation",
-          "QOS",
-          "VOIP",
-        ],
-      },
-      {
-        title: "Network Lockdown",
-        items: [
-          "Guest Network Access",
-          "Admin Network",
-          "DMZ Configuration",
-          "Captive Portal",
-          "Remote VPN",
-          "LDAPS",
-          "More",
-        ],
-      },
-    ].map((section, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="p-4 w-full md:w-[250px]"
-      >
-        <h3 className="text-[18px] text-[#5d615d]  tracking-tight leading-tight mb-3">
-          {section.title}
-        </h3>
+            <div className="grid grid-cols-1 md:flex md:gap-16">
+              {[
+                {
+                  title: "Infrastructure Planning",
+                  items: [
+                    "Device Mapping",
+                    "Floorplan Modeling",
+                    "Wi-Fi Planning",
+                    "Firewall Planning",
+                    "Network Switch Planning",
+                    "Cable Routing",
+                  ],
+                },
+                {
+                  title: "Implementation",
+                  items: [
+                    "Firewall Implementation",
+                    "Switch Configuration",
+                    "Wi-Fi Deployment",
+                    "VLAN Implementation",
+                    "QOS",
+                    "VOIP",
+                  ],
+                },
+                {
+                  title: "Network Lockdown",
+                  items: [
+                    "Guest Network Access",
+                    "Admin Network",
+                    "DMZ Configuration",
+                    "Captive Portal",
+                    "Remote VPN",
+                    "LDAPS",
+                    "More",
+                  ],
+                },
+              ].map((section, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className="p-4 w-full md:w-[250px]"
+                >
+                  <h3 className="text-[18px] text-[#5d615d]  tracking-tight leading-tight mb-3">
+                    {section.title}
+                  </h3>
 
-        <ul className="space-y-1">
-          {section.items.map((item, itemIndex) => (
-            <li key={`${section.title}-${itemIndex}`} className="flex items-center">
-              <span className="flex items-center justify-center w-2 h-2 mr-2 text-white">
-                <MdPlayArrow className="text-xs" />
-              </span>
-              <p className="text-[16px] text-[#5d615d]">
-                {item}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </motion.div>
-    ))}
-  </div>
-</div>
+                  <ul className="space-y-1">
+                    {section.items.map((item, itemIndex) => (
+                      <li
+                        key={`${section.title}-${itemIndex}`}
+                        className="flex items-center"
+                      >
+                        <span className="flex items-center justify-center w-2 h-2 mr-2 text-white">
+                          <MdPlayArrow className="text-xs" />
+                        </span>
+                        <p className="text-[16px] text-[#5d615d]">{item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
           {/* Mobile CTA Section */}
           <div className="w-full px-4 lg:hidden bg-black bg-opacity-50 rounded-lg ">
             <div className="p-5">
               <h2 className="mb-3 p-4 text-lg font-bold text-[#3e413e] leading-tight">
-              Looking for a network overhaul?
+                Looking for a network overhaul?
               </h2>
               <p className="mb-3 pl-4 pr-4 text-[#3e413e]  text-sm leading-relaxed">
-              Our team has implemented and optimized networks of all shapes and sizes to ensure business needs and deadlines are met.
+                Our team has implemented and optimized networks of all shapes
+                and sizes to ensure business needs and deadlines are met.
               </p>
               <a
-                  href="#"
-                  className=" py-3 mt-8 ml-3  w-[240px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-[#9fa39f] group relative 
+                href="#"
+                className=" py-3 mt-8 ml-3  w-[240px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-[#9fa39f] group relative 
      hover:bg-white/15 hover:border-[#444844]  hover:w-[280px]"
-                >
-                  <span className="flex justify-center items-center font-bold ">
-                    <span  className="text-[#9fa39f]">NETWORK PORTFOLIO</span>
-                    <AiOutlineRight className="h-[20px] font-semibold w-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </span>
-                </a>
+              >
+                <span className="flex justify-center items-center font-bold ">
+                  <span className="text-[#9fa39f]">NETWORK PORTFOLIO</span>
+                  <AiOutlineRight className="h-[20px] font-semibold w-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </span>
+              </a>
             </div>
 
             <div className="flex items-center justify-center p-3">
@@ -346,10 +357,11 @@ const Page = () => {
 
             <div className="p-5">
               <h2 className="mb-3 text-lg pl-5 pr-4 font-bold text-[#3e413e] leading-tight">
-              Let&apos;s optimize your network
+                Let&apos;s optimize your network
               </h2>
               <p className="mb-3 text-[#3e413e] pl-5 text-sm leading-relaxed">
-              Like what you see? Start working with us by providing your needs and details.
+                Like what you see? Start working with us by providing your needs
+                and details.
               </p>
               <a
                 href="#"
@@ -432,15 +444,15 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-                                       <div className="relative w-full h-64"> 
-                     <Image
-                       src={service.image}
-                       alt={service.title}
-                       layout="fill"
-                       objectFit="cover"
-                       className="rounded-lg"
-                     />
-                   </div>
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-xl  text-[#3e413e] tracking-tight leading-tight">
                         {service.title}

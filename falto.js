@@ -2,34 +2,27 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion"; // Import motion
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 import Image from "next/image";
-import dynamic from "next/dynamic";
-
 const services = [
   {
     id: 1,
-    title: "Cloud Migration Strategies",
-    image:"/img/serviceimg/cloud.png",
+    title: "Web Design and Hosting",
+    image:"/img/serviceimg/webdesign.webp",
   },
   {
     id: 2,
-    title: "Network Infrastructure",
-    image:"/img/serviceimg/network.png",
+    title: "Drone Cinematography",
+    image:"/img/serviceimg/dron.png",
   },
   {
     id: 3,
-    title: "Auditing & Pen Testing",
-    image:"/img/serviceimg/auditing.jpeg",
+    title: "Network Infrastructure",
+    image:"/img/serviceimg/network.png",
   },
 ];
-const MotionH1 = dynamic(() => import("framer-motion").then(mod => mod.motion.h1), { ssr: false });
-const MotionH2 = dynamic(() => import("framer-motion").then(mod => mod.motion.h2), { ssr: false });
-const MotionH3 = dynamic(() => import("framer-motion").then(mod => mod.motion.h3), { ssr: false });
-const MotionH4 = dynamic(() => import("framer-motion").then(mod => mod.motion.h4), { ssr: false });
-const MotionDiv = dynamic(() => import("framer-motion").then(mod => mod.motion.div), { ssr: false });
 
 const Page = () => {
   const sliderRef = useRef(null);
@@ -110,164 +103,180 @@ const Page = () => {
             className="et_parallax_bg absolute inset-0 w-full"
             style={{
               backgroundImage:
-                'url("/img/serviceimg/bgremote.jpg")',
+                'url("/img/serviceimg/bgdigital.jpg")',
             }}
           >
             <div
               className="absolute inset-0"
               style={{
                 backgroundImage:
-                  "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 100%)",
+                  "linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.9) 100%)",
               }}
             ></div>
           </div>
         </div>
 
-        <div className=" relative z-10 md:mt-16 py-7 mb-12 px-4">
-        <div className="flex justify-center flex-wrap">
-  {/* Left Content Column */}
-  <div className="w-full lg:w-3/6 lg:mb-0">
-    <div className="lg:mr-[30px]">
-      <MotionH1
-        {...textAnimation}
-        className="relative inline-block mt-5 text-[22px] font-medium text-white font-montserrat"
-      >
-        <span className="relative z-10 pr-2">REST ASSURED</span>
-        <svg
-          className="absolute bottom-[-14px] left-0 w-[200px] h-18 text-[#38b2ac]"
-          viewBox="0 0 210 40"
-          fill="none"
-          stroke="#20c18c"
-          strokeWidth="2"
-        >
-          <path
-            d="M0.6524998052045703 29.55421153176576 C47.04466334928122 26.717087206822384, 92.08576316502536 27.58164050934886, 158.56310806702822 25.879164163954556"
-            fill="none"
-            stroke="#20c18c"
-            strokeWidth="2"
-          />
-          <path
-            d="M156.1078063296154 24.008997510187328 C118.90908714758213 24.42131695494509, 84.21842937454542 28.8955397640214, 1.2716061221435666 28.43523649405688"
-            fill="none"
-            stroke="#20c18c"
-            strokeWidth="2"
-          />
-        </svg>
-      </MotionH1>
+        <div className=" relative z-10 md:mt-20 py-7 mb-12 px-4">
+          <div className="flex justify-center flex-wrap">
+            {/* Left Content Column */}
+            <div className="w-full lg:w-3/6 lg:mb-0">
+              <div className="lg:mr-[30px]">
+                <motion.h1
+                  {...textAnimation}
+                  className="relative inline-block mt-5 text-[22px] font-medium text-white font-montserrat"
+                >
+                  <span className="relative z-10 pr-2">Build Your Brand</span>
+                  <svg
+                    className="absolute bottom-[-14px] left-0 w-[200px] h-18 text-emerald-500"
+                    viewBox="0 0 210 40"
+                    fill="none"
+                    stroke="#20c18c"
+                    strokeWidth="2"
+                  >
+                    <path
+                      d="M0.6524998052045703 29.55421153176576 C47.04466334928122 26.717087206822384, 92.08576316502536 27.58164050934886, 158.56310806702822 25.879164163954556"
+                      fill="none"
+                      stroke="#20c18c"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M156.1078063296154 24.008997510187328 C118.90908714758213 24.42131695494509, 84.21842937454542 28.8955397640214, 1.2716061221435666 28.43523649405688"
+                      fill="none"
+                      stroke="#20c18c"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </motion.h1>
 
-      <MotionH1
-        {...textAnimation}
-        className="pb-4 text-[43px] font-extrabold text-white leading-[1.3em] font-montserrat tracking-tight mb-2 mt-3 shadow-md"
-      >
-        Remote Monitoring
-      </MotionH1>
+                <motion.h1
+                  {...textAnimation}
+                  className="pb-4 text-[43px] font-extrabold text-white leading-[1.3em] font-montserrat tracking-tight mb-2 mt-3 shadow-md"
+                >
+                  Digital Marketing
+                </motion.h1>
 
-      <MotionDiv {...textAnimation}>
-        <h2 className="pb-4 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-bold font-montserrat">
-          <p className="text-shadow-md">
-            Assistance & Alerts for Your Home or Business delivered.
-          </p>
-        </h2>
-      </MotionDiv>
+                <motion.div {...textAnimation}>
+                  <h2 className="pb-4 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-semibold font-montserrat">
+                    <p className="text-shadow-md">
+                      Our Digital Marketing team is ready to take your business
+                      to the next level.
+                    </p>
+                  </h2>
+                </motion.div>
 
-      <MotionH3
-        {...textAnimation}
-        className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
-      >
-        Do you forget to patch your devices? Leave it to us to monitor
-        your home or business network. With so many devices one
-        vulnerability can compromise your whole network.
-      </MotionH3>
+                <motion.h3
+                  {...textAnimation}
+                  className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
+                >
+                  Businesses of all kinds have seen new opportunities for growth
+                  thanks to the increasing use of social media and other web
+                  technologies, but many struggle to get their message out.
+                </motion.h3>
 
-      <MotionH2
-        {...textAnimation}
-        className="mb-9 mt-5 text-[20px] lg:text-[21px] md:text-[18px] sm:text-[16px] font-light text-white leading-[1.8em] drop-shadow-md"
-      >
-        Take the stress out of managing your own PCs and other
-        network-enabled connected devices with our remote monitoring
-        packages. Available and tailored to your needs to ensure you
-        are up to date and secure.
-      </MotionH2>
+                <motion.h2
+                  {...textAnimation}
+                  className="mb-9 mt-5 text-[20px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-light text-white leading-[1.8em] drop-shadow-md"
+                >
+                  Be heard through the noise with our marketing services. These
+                  services provide you access to our content creators,
+                  photographers, digital designers, and more. Let us handle
+                  generating traffic to your business or project, so you can
+                  focus on operations.
+                </motion.h2>
 
-      <MotionH4
-        {...textAnimation}
-        className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
-      >
-        Capabilities
-      </MotionH4>
+                <motion.h4
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: false }}
+                  className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
+                >
+                  Capabilities
+                </motion.h4>
 
-      <MotionH2
-        {...textAnimation}
-        className="pb-2 text-[18px] lg:text-[18px] md:text-[14px] sm:text-[12px] font-bold text-white leading-relaxed text-shadow-md"
-      >
-        Ensure your devices are secured. Inquire for our monitoring
-        packages to secure your Home or Business.
-      </MotionH2>
-    </div>
-  </div>
+                <motion.h2
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: false }}
+                  className="pb-2 text-[18px] lg:text-[20px] md:text-[14px] sm:text-[12px] font-semibold text-white leading-relaxed text-shadow-md"
+                >
+                  We have experience transforming brands and can help you too!
+                  All of our clients are provided with before and after
+                  analytics to demonstrate the accelerated business growth
+                  achieved with the package selected.
+                </motion.h2>
+                <p className="text-gray-400 text-sm ml-2">
+                  (Actual Results May Vary*)
+                </p>
+              </div>
+            </div>
 
-  {/* Right Side Column */}
-  <MotionDiv
-    initial={{ opacity: 0, scale: 0.8, y: 50 }}
-    animate={{ opacity: 1, scale: 1, y: 0 }}
-    transition={{ duration: 1.2, ease: "easeOut" }}
-    className="w-full px-6 mt-16 lg:w-[30%] lg:block hidden"
-  >
-    <div className="p-6 mb-6 rounded bg-black bg-opacity-50">
-      <h2 className="mb-3 text-2xl font-extrabold">
-        {" "}
-        Looking for 24/7 network & device monitoring?
-      </h2>
-      <p className="mb-4 text-gray-300 font-secondary">
-        Our engineers will be glad to assist with all your monitoring
-        needs. We are always available to help and troubleshoot remote
-        devices and provide extensive reports and life cycle upgrade
-        packages.
-      </p>
-      <a
-        href="#"
-        className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
-      >
-        <span className="flex items-center font-semibold">
-          <span>INQUIRE</span>
-          <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
-        </span>
-      </a>
-    </div>
-  </MotionDiv>
-</div>;
+            {/* Right Side Column */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="w-full px-6 mt-1 lg:w-[34%] lg:h-full lg:block hidden"
+            >
+              <div className="p-6 mb-6 rounded bg-black bg-opacity-50">
+                <h2 className="mb-3 text-2xl font-extrabold">
+                  {" "}
+                  We speak marketing so you don&apos;t have to.
+                </h2>
+                <p className="mb-4 mt-4 text-gray-300 font-secondary">
+                  View some of our testimonials below
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
+                >
+                  <span className="flex items-center font-semibold">
+                    <span>VIEW OUR PORTFOLIO</span>
+                    <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+                  </span>
+                </a>
+              </div>
+            </motion.div>
+          </div>
 
           {/* Services Section */}
-          <div className="md:pl-20 lg:ml-10 md:ml-6 md:pt-6 lg:mt-14">
+          <div className="md:pl-20 md:ml-6  md:pt-6 lg:mt-14">
             <div className="grid grid-cols-1 md:flex md:gap-6">
               {[
                 {
-                  title: "Device Audit",
+                  title: " Project Communication",
                   items: [
-                    "All Network Devices",
-                    "PC & Mac Agents",
-                    "Printer & IoT Monitoring",
-                    "Network Services Monitoring",
+                    "Personalized service",
+                    "Budget Planning",
+                    "Requirement Building",
+                    "Analytics Deliveries",
+                    "Targeted Campaigns",
+                    "Search Engine",
+                    "Optimization",
+                  ],
+                },
+                {
+                  title: "Options",
+                  items: [
+                    "Photography",
+                    "Videography",
+                    "Social Content",
+                    "Creation",
+                    "Platform Management",
+                    "Customer",
+                    "Communication",
                     "More",
                   ],
                 },
                 {
-                  title: "Customer Portal",
+                  title: "Platforms",
                   items: [
-                    "Ticketing System",
-                    "Chat System",
-                    "Patch Releases",
-                    "Downtime Schedules",
-                    "More",
-                  ],
-                },
-                {
-                  title: "Alerts",
-                  items: [
-                    "Device Alerts",
-                    "Audit Reports",
-                    "Upgrade Paths",
-                    "Decommission Reports",
+                    "Websites",
+                    "Google Ads (Business)",
+                    "Instagram",
+                    "Facebook",
+                    "Mailchimp",
                     "More",
                   ],
                 },
@@ -278,7 +287,7 @@ const Page = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, ease: "easeOut" }}
                   viewport={{ once: true }}
-                  className="p-4 w-full md:w-[220px]"
+                  className="p-4 w-full md:w-[270px]"
                 >
                   <h3 className="text-[21px] font-bold text-white font-montserrat shadow-md tracking-tight leading-tight mb-3">
                     {section.title}
@@ -303,24 +312,20 @@ const Page = () => {
               ))}
             </div>
           </div>
-
           {/* Mobile CTA Section */}
-          <div className="w-full px-4 lg:hidden bg-[#001420] bg-opacity-50 rounded-lg ">
+          <div className="w-full px-4 lg:hidden bg-black bg-opacity-50 rounded-lg ">
             <div className="p-5">
               <h2 className="mb-3 p-4 text-lg font-bold text-gray-100 leading-tight">
-                Looking for 24/7 network & device monitoring?
+                We speak marketing so you don&apos;t have to.
               </h2>
               <p className="mb-3 pl-4 pr-4 text-gray-300 text-sm leading-relaxed">
-                Our engineers will be glad to assist with all your monitoring
-                needs. We are always available to help and troubleshoot remote
-                devices and provide extensive reports and life cycle upgrade
-                packages.
+                View some of our testimonials below
               </p>
               <a
                 href="#"
                 className="inline-block ml-5 px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white"
               >
-                INQUIRE
+                VIEW OUR PORTFOLIO
               </a>
             </div>
 
@@ -336,11 +341,11 @@ const Page = () => {
 
             <div className="p-5">
               <h2 className="mb-3 text-lg pl-5 pr-4 font-bold text-gray-100 leading-tight">
-                Let&apos;s start a monitoring conversation.
+                Let&apos;s start a marketing converstion.
               </h2>
               <p className="mb-3 text-gray-300 pl-5 text-sm leading-relaxed">
                 Like what you see? Start working with us by providing your needs
-                and details
+                and details.
               </p>
               <a
                 href="#"
@@ -384,7 +389,7 @@ const Page = () => {
             <span className="relative">
               Related Services
               <svg
-                className="absolute bottom-[-8px] left-0 w-full h-20 pt-7 text-[#38b2ac]"
+                className="absolute bottom-[-8px] left-0 w-full h-20 pt-7 text-emerald-500"
                 viewBox="0 0 210 40"
                 fill="none"
                 stroke="#20c18c"
@@ -423,17 +428,15 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-                   
-                                        <div className="relative w-full h-64"> 
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        layout="fill"
-                        objectFit="cover"
-                        className="rounded-lg"
-                      />
-                    </div>
-                    
+                                     <div className="relative w-full h-64"> 
+                   <Image
+                     src={service.image}
+                     alt={service.title}
+                     layout="fill"
+                     objectFit="cover"
+                     className="rounded-lg"
+                   />
+                 </div>
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}

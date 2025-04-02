@@ -6,24 +6,44 @@ import { motion } from "framer-motion"; // Import motion
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 const services = [
   {
     id: 1,
     title: "Web Design and Hosting",
-    image:"/img/serviceimg/webdesign.webp",
+    image: "/img/serviceimg/webdesign.webp",
   },
   {
     id: 2,
     title: "Drone Cinematography",
-    image:"/img/serviceimg/dron.png",
+    image: "/img/serviceimg/dron.png",
   },
   {
     id: 3,
     title: "Network Infrastructure",
-    image:"/img/serviceimg/network.png",
+    image: "/img/serviceimg/network.png",
   },
 ];
-
+const MotionH1 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h1),
+  { ssr: false }
+);
+const MotionH2 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h2),
+  { ssr: false }
+);
+const MotionH3 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h3),
+  { ssr: false }
+);
+const MotionH4 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h4),
+  { ssr: false }
+);
+const MotionDiv = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.div),
+  { ssr: false }
+);
 const Page = () => {
   const sliderRef = useRef(null);
 
@@ -102,8 +122,7 @@ const Page = () => {
           <div
             className="et_parallax_bg absolute inset-0 w-full"
             style={{
-              backgroundImage:
-                'url("/img/serviceimg/bgdigital.jpg")',
+              backgroundImage: 'url("/img/serviceimg/bgdigital.jpg")',
             }}
           >
             <div
@@ -121,7 +140,7 @@ const Page = () => {
             {/* Left Content Column */}
             <div className="w-full lg:w-3/6 lg:mb-0">
               <div className="lg:mr-[30px]">
-                <motion.h1
+                <MotionH1
                   {...textAnimation}
                   className="relative inline-block mt-5 text-[22px] font-medium text-white font-montserrat"
                 >
@@ -146,34 +165,34 @@ const Page = () => {
                       strokeWidth="2"
                     />
                   </svg>
-                </motion.h1>
+                </MotionH1>
 
-                <motion.h1
+                <MotionH1
                   {...textAnimation}
                   className="pb-4 text-[43px] font-extrabold text-white leading-[1.3em] font-montserrat tracking-tight mb-2 mt-3 shadow-md"
                 >
                   Digital Marketing
-                </motion.h1>
+                </MotionH1>
 
-                <motion.div {...textAnimation}>
+                <MotionDiv {...textAnimation}>
                   <h2 className="pb-4 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-semibold font-montserrat">
                     <p className="text-shadow-md">
                       Our Digital Marketing team is ready to take your business
                       to the next level.
                     </p>
                   </h2>
-                </motion.div>
+                </MotionDiv>
 
-                <motion.h3
+                <MotionH3
                   {...textAnimation}
-                  className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
+                  className="pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
                 >
                   Businesses of all kinds have seen new opportunities for growth
                   thanks to the increasing use of social media and other web
                   technologies, but many struggle to get their message out.
-                </motion.h3>
+                </MotionH3>
 
-                <motion.h2
+                <MotionH2
                   {...textAnimation}
                   className="mb-9 mt-5 text-[20px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-light text-white leading-[1.8em] drop-shadow-md"
                 >
@@ -182,9 +201,9 @@ const Page = () => {
                   photographers, digital designers, and more. Let us handle
                   generating traffic to your business or project, so you can
                   focus on operations.
-                </motion.h2>
+                </MotionH2>
 
-                <motion.h4
+                <MotionH4
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
@@ -192,9 +211,9 @@ const Page = () => {
                   className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
                 >
                   Capabilities
-                </motion.h4>
+                </MotionH4>
 
-                <motion.h2
+                <MotionH2
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1 }}
@@ -205,7 +224,7 @@ const Page = () => {
                   All of our clients are provided with before and after
                   analytics to demonstrate the accelerated business growth
                   achieved with the package selected.
-                </motion.h2>
+                </MotionH2>
                 <p className="text-gray-400 text-sm ml-2">
                   (Actual Results May Vary*)
                 </p>
@@ -213,7 +232,7 @@ const Page = () => {
             </div>
 
             {/* Right Side Column */}
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
@@ -221,7 +240,6 @@ const Page = () => {
             >
               <div className="p-6 mb-6 rounded bg-black bg-opacity-50">
                 <h2 className="mb-3 text-2xl font-extrabold">
-                  {" "}
                   We speak marketing so you don&apos;t have to.
                 </h2>
                 <p className="mb-4 mt-4 text-gray-300 font-secondary">
@@ -237,7 +255,7 @@ const Page = () => {
                   </span>
                 </a>
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
 
           {/* Services Section */}
@@ -428,15 +446,15 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-                                     <div className="relative w-full h-64"> 
-                   <Image
-                     src={service.image}
-                     alt={service.title}
-                     layout="fill"
-                     objectFit="cover"
-                     className="rounded-lg"
-                   />
-                 </div>
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}

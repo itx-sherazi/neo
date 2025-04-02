@@ -2,28 +2,48 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 const services = [
   {
     id: 1,
     title: "Drone Cinematography",
-    image:"/img/serviceimg/dron.png",
+    image: "/img/serviceimg/dron.png",
   },
   {
     id: 2,
     title: "Network Infrastructure",
-    image:"/img/serviceimg/network.png",
+    image: "/img/serviceimg/network.png",
   },
   {
     id: 3,
     title: "Digital Marketing",
-    image:"/img/serviceimg/digitalmarkiting.png"
-      
+    image: "/img/serviceimg/digitalmarkiting.png",
   },
 ];
+const MotionDiv = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.div),
+  { ssr: false }
+);
+const MotionH1 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h1),
+  { ssr: false }
+);
+const MotionH2 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h2),
+  { ssr: false }
+);
+const MotionH3 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h3),
+  { ssr: false }
+);
+const MotionH4 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h4),
+  { ssr: false }
+);
 
 const Page = () => {
   const sliderRef = useRef(null);
@@ -74,49 +94,34 @@ const Page = () => {
     </button>
   );
 
-    const textAnimation = {
-      initial: {
-        opacity: 0,
-        y: 20,
-        scale: 0.95,
-      },
-      whileInView: {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-      },
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-      viewport: {
-        once: true,
-        amount: 0.3,
-      },
-    };
+  const textAnimation = {
+    initial: { opacity: 0, y: 20, scale: 0.95 },
+    whileInView: { opacity: 1, y: 0, scale: 1 },
+    transition: { duration: 0.8, ease: "easeOut" },
+    viewport: { once: false, amount: 0.2 },
+  };
 
   return (
     <div className="min-h-screen">
       <section className="relative overflow-hidden pt-8 text-white bg-[#001420]">
         {/* background image */}
         <div className="absolute inset-0 z-0">
-  <Image
-    src="/img/serviceimg/bgweb.png"
-    alt="Background"
-    layout="fill" 
-    objectFit="cover" 
-    className="w-full h-full"
-  />
-  <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
-</div>
-
+          <Image
+            src="/img/serviceimg/bgweb.png"
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+            className="w-full h-full"
+          />
+          <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
+        </div>
 
         <div className="container relative z-10 mt-16 py-7 mb-12 px-4">
           <div className="flex justify-center flex-wrap">
             {/* Left Content Column */}
             <div className="w-full lg:w-[700px] lg:mb-0">
               <div className="lg:mr-[30px]">
-                <motion.h1
+                <MotionH1
                   {...textAnimation}
                   className="relative inline-block mt-5 text-[20px] font-medium text-white font-montserrat"
                 >
@@ -135,7 +140,6 @@ const Page = () => {
                       initial={{ strokeDashoffset: 202 }}
                       animate={{ strokeDashoffset: 0 }}
                       transition={{ duration: 1 }}
-                      className="animate-draw-line-1"
                     />
                     <motion.path
                       d="M199.331 26.16C143.726 23.421 84.627 22.92 -2.42 23.93"
@@ -144,73 +148,63 @@ const Page = () => {
                       initial={{ strokeDashoffset: 201.8 }}
                       animate={{ strokeDashoffset: 0 }}
                       transition={{ duration: 1 }}
-                      className="animate-draw-line-2"
                     />
                   </svg>
-                </motion.h1>
+                </MotionH1>
 
-                <motion.h1
+                <MotionH1
                   {...textAnimation}
-                  className=" text-[48px] font-extrabold text-white  font-montserrat tracking-tight mb-2 mt-6 shadow-md"
+                  className="text-[48px] font-extrabold text-white font-montserrat tracking-tight mb-2 mt-6 shadow-md"
                 >
                   Website Design and <br /> Hosting
-                </motion.h1>
+                </MotionH1>
 
-                <motion.div {...textAnimation}>
-                  <h2 className="pb-2 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-semibold font-montserrat">
-                    <p className="text-shadow-md">
-                      Our website designers are here to provide all digital
-                      needs for your business. We understand your website should
-                      be an essential tool used to extend your brand, designed
-                      to target the right message to your audience.
-                    </p>
+                <MotionDiv {...textAnimation}>
+                  <h2 className="pb-2 text-[20px] lg:text-[23px] leading-[1.8em] text-white font-semibold font-montserrat">
+                    Our website designers are here to provide all digital needs
+                    for your business. We understand your website should be an
+                    essential tool used to extend your brand, designed to target
+                    the right message to your audience.
                   </h2>
-                </motion.div>
+                </MotionDiv>
 
-                <motion.h3
+                <MotionH3
                   {...textAnimation}
-                  className="pb-3 pt-3 text-[21px] lg:text-[21px] md:text-[18px] sm:text-[16px] font-extrabold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
+                  className="pb-3 pt-3 text-[21px] font-extrabold text-white text-shadow-md my-2 font-montserrat"
                 >
                   A poorly designed, underperforming, or outdated website can
                   make or break a business.
-                </motion.h3>
+                </MotionH3>
 
-                <motion.h2
+                <MotionH2
                   {...textAnimation}
-                  className="pb-6 text-[20px] lg:text-[22px] md:text-[18px] sm:text-[16px] font-light text-white  text-shadow-md"
+                  className="pb-6 text-[20px] font-light text-white text-shadow-md"
                 >
                   Our hosting services include lightning-fast download and
                   upload speeds. However, we are flexible to all development
                   needs and can configure your site to external hosting
                   providers.
-                </motion.h2>
-
-                <motion.h4
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: false }}
+                </MotionH2>
+                <MotionH4
+                  {...textAnimation}
                   className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
                 >
                   Capabilities
-                </motion.h4>
+                </MotionH4>
 
-                <motion.h2
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1 }}
-                  viewport={{ once: false }}
-                  className="pb-2 text-[18px] lg:text-[22px] md:text-[14px] sm:text-[12px]  text-white leading-relaxed text-shadow-md"
+                <MotionH2
+                  {...textAnimation}
+                  className="pb-2 text-[18px] lg:text-[22px] md:text-[14px] sm:text-[12px] text-white leading-relaxed text-shadow-md"
                 >
                   We design your website or brand identity to reflect your
                   brand&apos;s strategy, identity, and goals so that you occupy
                   a prominent position in the market.
-                </motion.h2>
+                </MotionH2>
               </div>
             </div>
 
             {/* Right Side Column */}
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
@@ -220,22 +214,20 @@ const Page = () => {
                 <h2 className="mb-3 text-xl font-extrabold">
                   Looking for a new web design agency?
                 </h2>
-                <p className="mb-4 text-gray-300 font-secondary">
+                <p className="mb-4 text-gray-300">
+                  {" "}
                   Our catalog is an extension of our design, engineering, and
                   delivery expertise to showcase the true capability of our
                   team.
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
+                  className="inline-flex items-center px-6 py-2 font-semibold text-[14px] text-[#20C18C] uppercase bg-white rounded transition-all group"
                 >
-                  <span className="flex items-center font-semibold">
-                    <span>VIEW OUR PORTFOLIO</span>
-                    <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
-                  </span>
+                  VIEW OUR PORTFOLIO
                 </a>
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
 
           {/* Services Section */}
@@ -425,15 +417,15 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-                    <div className="relative w-full h-64"> 
-  <Image
-    src={service.image}
-    alt={service.title}
-    layout="fill"
-    objectFit="cover"
-    className="rounded-lg"
-  />
-</div>
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
 
                     <div className="p-2 flex justify-center bg-[#001420] ">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">

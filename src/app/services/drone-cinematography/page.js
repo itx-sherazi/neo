@@ -5,6 +5,7 @@ import { MdPlayArrow } from "react-icons/md";
 import { motion } from "framer-motion"; 
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
+import dynamic from "next/dynamic";
 const services = [
   {
     id: 1,
@@ -22,6 +23,12 @@ const services = [
     image:"/img/serviceimg/webdesign.webp",
   },
 ];
+const MotionH1 = dynamic(() => import("framer-motion").then(mod => mod.motion.h1), { ssr: false });
+const MotionH2 = dynamic(() => import("framer-motion").then(mod => mod.motion.h2), { ssr: false });
+const MotionH3 = dynamic(() => import("framer-motion").then(mod => mod.motion.h3), { ssr: false });
+const MotionH4 = dynamic(() => import("framer-motion").then(mod => mod.motion.h4), { ssr: false });
+const MotionDiv = dynamic(() => import("framer-motion").then(mod => mod.motion.div), { ssr: false });
+
 
 const Page = () => {
   const sliderRef = useRef(null);
@@ -92,6 +99,7 @@ const Page = () => {
       amount: 0.3,
     },
   };
+  
 
   return (
     <div className="min-h-screen">
@@ -109,119 +117,115 @@ const Page = () => {
         </div>
 
         <div className=" relative z-10 md:mt-16 py-7 mb-12 px-4">
-          <div className="flex justify-center flex-wrap">
-            {/* Left Content Column */}
-            <div className="w-full lg:w-3/6 lg:mb-0">
-              <div className="lg:mr-[30px]">
-                <motion.h1
-                  {...textAnimation}
-                  className="relative inline-block mt-5 text-[22px] font-medium text-white font-montserrat"
-                >
-                  <span className="relative z-10 pr-2">TAKE FLIGHT</span>
-                  <svg
-                    className="absolute bottom-[-10px] left-0 w-[190px] text-emerald-500"
-                    viewBox="0 0 210 40"
-                    fill="none"
-                    stroke="#20c18c"
-                    strokeWidth="2"
-                  >
-                    <path
-                      d="M0.004302553832530975 24.053169555962086 C44.25265205660654 23.353271037540143, 88.55037137139227 25.46470382829637, 134.56801062077284 24.268083162605762"
-                      fill="none"
-                      stroke="#20c18c"
-                      strokeWidth="2"
-                    />
-                    <path
-                      d="M131.09610468894243 23.896847777068615 C84.59167605348102 27.30519971024184, 39.32364420757041 24.154174176565693, 0.9202788546681404 25.145187191665173"
-                      fill="none"
-                      stroke="#20c18c"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </motion.h1>
-
-                <motion.h1
-                  {...textAnimation}
-                  className="pb-4 text-[43px] font-extrabold text-white leading-[1.3em] font-montserrat tracking-tight mb-2 mt-3 shadow-md"
-                >
-                  Drone Cinematography
-                </motion.h1>
-
-                <motion.div {...textAnimation}>
-                  <h2 className="pb-4 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-bold font-montserrat">
-                    <p className="text-shadow-md">
-                      Ready to Elevate your Content to the Next Level?
-                    </p>
-                  </h2>
-                </motion.div>
-
-                <motion.h3
-                  {...textAnimation}
-                  className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
-                >
-                  With so much competition, you must elevate your content to
-                  stand out at the forefront of your business.
-                </motion.h3>
-
-                <motion.h2
-                  {...textAnimation}
-                  className="mb-9 mt-5 text-[20px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-ligh text-white leading-[1.8em] drop-shadow-md"
-                >
-                  Our Drone Photography and Videography services are here to
-                  deliver. We offer an ample amount of packages ready for our
-                  next flight to be your deliverable and are licensed & insured!
-                </motion.h2>
-
-                <motion.h4
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: false }}
-                  className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
-                >
-                  Capabilities
-                </motion.h4>
-
-                <motion.h2
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1 }}
-                  viewport={{ once: false }}
-                  className="pb-2 text-[18px] lg:text-[20px] md:text-[14px] sm:text-[12px] font-bold text-white leading-relaxed text-shadow-md"
-                >
-                  Fully Licensed, Insured & Ready to take Flight.
-                </motion.h2>
-              </div>
-            </div>
-
-            {/* Right Side Column */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, y: 50 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-full px-6 mt-10 lg:w-[30%] lg:block hidden"
+        <div className="flex justify-center flex-wrap">
+      {/* Left Content Column */}
+      <div className="w-full lg:w-3/6 lg:mb-0">
+        <div className="lg:mr-[30px]">
+          <MotionH1
+            {...textAnimation}
+            className="relative inline-block mt-5 text-[22px] font-medium text-white font-montserrat"
+          >
+            <span className="relative z-10 pr-2">TAKE FLIGHT</span>
+            <svg
+              className="absolute bottom-[-10px] left-0 w-[190px] text-emerald-500"
+              viewBox="0 0 210 40"
+              fill="none"
+              stroke="#20c18c"
+              strokeWidth="2"
             >
-              <div className="p-6 mb-6 rounded bg-black bg-opacity-50">
-                <h2 className="mb-3 text-2xl font-extrabold">
-                  {" "}
-                  Looking for Drone Work?
-                </h2>
-                <p className="mb-4 text-gray-300 font-secondary">
-                  Our Drone Cinematography experts are ready to deliver Photos
-                  and Videos for your next project.
-                </p>
-                <a
-                  href="#"
-                  className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
-                >
-                  <span className="flex items-center ">
-                    <span>INQUIRE</span>
-                    <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
-                  </span>
-                </a>
-              </div>
-            </motion.div>
-          </div>
+              <path
+                d="M0.004302553832530975 24.053169555962086 C44.25265205660654 23.353271037540143, 88.55037137139227 25.46470382829637, 134.56801062077284 24.268083162605762"
+                fill="none"
+                stroke="#20c18c"
+                strokeWidth="2"
+              />
+              <path
+                d="M131.09610468894243 23.896847777068615 C84.59167605348102 27.30519971024184, 39.32364420757041 24.154174176565693, 0.9202788546681404 25.145187191665173"
+                fill="none"
+                stroke="#20c18c"
+                strokeWidth="2"
+              />
+            </svg>
+          </MotionH1>
+
+          <MotionH1
+            {...textAnimation}
+            className="pb-4 text-[43px] font-extrabold text-white leading-[1.3em] font-montserrat tracking-tight mb-2 mt-3 shadow-md"
+          >
+            Drone Cinematography
+          </MotionH1>
+
+          <MotionDiv {...textAnimation}>
+            <h2 className="pb-4 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-bold font-montserrat">
+              <p className="text-shadow-md">
+                Ready to Elevate your Content to the Next Level?
+              </p>
+            </h2>
+          </MotionDiv>
+
+          <MotionH3
+            {...textAnimation}
+            className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
+          >
+            With so much competition, you must elevate your content to stand out at the forefront of your business.
+          </MotionH3>
+
+          <MotionH2
+            {...textAnimation}
+            className="mb-9 mt-5 text-[20px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-ligh text-white leading-[1.8em] drop-shadow-md"
+          >
+            Our Drone Photography and Videography services are here to deliver. We offer an ample amount of packages ready for our next flight to be your deliverable and are licensed & insured!
+          </MotionH2>
+
+          <MotionH4
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: false }}
+            className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
+          >
+            Capabilities
+          </MotionH4>
+
+          <MotionH2
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: false }}
+            className="pb-2 text-[18px] lg:text-[20px] md:text-[14px] sm:text-[12px] font-bold text-white leading-relaxed text-shadow-md"
+          >
+            Fully Licensed, Insured & Ready to take Flight.
+          </MotionH2>
+        </div>
+      </div>
+
+      {/* Right Side Column */}
+      <MotionDiv
+        initial={{ opacity: 0, scale: 0.8, y: 50 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="w-full px-6 mt-10 lg:w-[30%] lg:block hidden"
+      >
+        <div className="p-6 mb-6 rounded bg-black bg-opacity-50">
+          <h2 className="mb-3 text-2xl font-extrabold">
+            {" "}
+            Looking for Drone Work?
+          </h2>
+          <p className="mb-4 text-gray-300 font-secondary">
+            Our Drone Cinematography experts are ready to deliver Photos and Videos for your next project.
+          </p>
+          <a
+            href="#"
+            className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
+          >
+            <span className="flex items-center ">
+              <span>INQUIRE</span>
+              <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+            </span>
+          </a>
+        </div>
+      </MotionDiv>
+    </div>
 
           {/* Services Section */}
           <div className="md:pl-20 md:ml-6 md:pt-6 lg:mt-14">
