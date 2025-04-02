@@ -5,24 +5,23 @@ import { MdPlayArrow } from "react-icons/md";
 import { motion } from "framer-motion"; 
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
+import Image from "next/image";
 const services = [
   {
     id: 1,
     title: "Drone Cinematography",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB53QrfZ7DR_v_a01p48T9z8scz-VZiPVyyDjjHK9l3PMWwtY4",
+    image:"/img/serviceimg/dron.png",
   },
   {
     id: 2,
     title: "Network Infrastructure",
-    image:
-      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRoXv3Azd8HiJxg5-a8LJQsOCPATV3Vq2xHk06arIV4-deAUcMG",
+    image:"/img/serviceimg/network.png",
   },
   {
     id: 3,
     title: "Digital Marketing",
-    image:
-      "https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image:"/img/serviceimg/digitalmarkiting.png"
+      
   },
 ];
 
@@ -75,39 +74,42 @@ const Page = () => {
     </button>
   );
 
-  const textAnimation = {
-    initial: {
-      opacity: 0,
-      y: 20,
-      scale: 0.95,
-    },
-    whileInView: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-    },
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-    viewport: {
-      once: true,
-      amount: 0.3,
-    },
-  };
+    const textAnimation = {
+      initial: {
+        opacity: 0,
+        y: 20,
+        scale: 0.95,
+      },
+      whileInView: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+      },
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+      viewport: {
+        once: true,
+        amount: 0.3,
+      },
+    };
 
   return (
     <div className="min-h-screen">
       <section className="relative overflow-hidden pt-8 text-white bg-[#001420]">
         {/* background image */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://neotechdevs.com/wp-content/uploads/2022/03/pexels-christina-morillo-1181271-scaled.jpg"
-            alt="Background"
-            className="object-cover w-full h-full"
-          />
-          <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
-        </div>
+  <Image
+    src="/img/serviceimg/bgweb.png"
+    alt="Background"
+    layout="fill" 
+    objectFit="cover" 
+    className="w-full h-full"
+  />
+  <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
+</div>
+
 
         <div className="container relative z-10 mt-16 py-7 mb-12 px-4">
           <div className="flex justify-center flex-wrap">
@@ -423,13 +425,16 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-                    <div className="relative h-[240px]">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full rounded-lg object-cover"
-                      />
-                    </div>
+                    <div className="relative w-full h-64"> 
+  <Image
+    src={service.image}
+    alt={service.title}
+    layout="fill"
+    objectFit="cover"
+    className="rounded-lg"
+  />
+</div>
+
                     <div className="p-2 flex justify-center bg-[#001420] ">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}

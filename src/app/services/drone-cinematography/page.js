@@ -9,20 +9,17 @@ const services = [
   {
     id: 1,
     title: "Digital Marketing",
-    image:
-      "https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image:"/img/serviceimg/digitalmarkiting.png",
   },
   {
     id: 2,
     title: "Smart Homes",
-    image:
-      "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2019-01/34582913840_a72e8bcf32_c.jpg?itok=aV-8cRIZ",
+    image:"/img/serviceimg/smarthome.jpg",
   },
   {
     id: 3,
     title: "Web Design and Hosting",
-    image:
-      "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1709881319/catalog/1435523690771054592/vz9dsixirjqfq5bnab96.webp",
+    image:"/img/serviceimg/webdesign.webp",
   },
 ];
 
@@ -105,7 +102,7 @@ const Page = () => {
             className="et_parallax_bg absolute inset-0 w-full"
             style={{
               backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 100%), 
-                        url("https://neotechdevs.com/wp-content/uploads/2022/08/drone-cinematography-scaled.jpg")`,
+                        url("/img/serviceimg/bgdrone.jpg")`,
               backgroundSize: "cover",
             }}
           ></div>

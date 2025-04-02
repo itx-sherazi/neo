@@ -5,24 +5,22 @@ import { MdPlayArrow } from "react-icons/md";
 import { motion } from "framer-motion"; // Import motion
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
+import Image from "next/image";
 const services = [
   {
     id: 1,
     title: "Web Design and Hosting",
-    image:
-      "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1709881319/catalog/1435523690771054592/vz9dsixirjqfq5bnab96.webp",
+    image:"/img/serviceimg/webdesign.webp",
   },
   {
     id: 2,
     title: "Drone Cinematography",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB53QrfZ7DR_v_a01p48T9z8scz-VZiPVyyDjjHK9l3PMWwtY4",
+    image:"/img/serviceimg/dron.png",
   },
   {
     id: 3,
     title: "Network Infrastructure",
-    image:
-      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRoXv3Azd8HiJxg5-a8LJQsOCPATV3Vq2xHk06arIV4-deAUcMG",
+    image:"/img/serviceimg/network.png",
   },
 ];
 
@@ -105,7 +103,7 @@ const Page = () => {
             className="et_parallax_bg absolute inset-0 w-full"
             style={{
               backgroundImage:
-                'url("https://neotechdevs.com/wp-content/uploads/2022/08/pexels-pixabay-267350-scaled.jpg")',
+                'url("/img/serviceimg/bgdigital.jpg")',
             }}
           >
             <div
@@ -430,13 +428,15 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-                    <div className="relative h-[240px]">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full rounded-lg object-cover"
-                      />
-                    </div>
+                                     <div className="relative w-full h-64"> 
+                   <Image
+                     src={service.image}
+                     alt={service.title}
+                     layout="fill"
+                     objectFit="cover"
+                     className="rounded-lg"
+                   />
+                 </div>
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}

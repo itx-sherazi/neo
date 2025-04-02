@@ -5,24 +5,22 @@ import { MdPlayArrow } from "react-icons/md";
 import { motion } from "framer-motion";
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
+import Image from "next/image";
 const services = [
   {
     id: 1,
     title: "Smart Homes",
-    image:
-      "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2019-01/34582913840_a72e8bcf32_c.jpg?itok=aV-8cRIZ",
+    image:"/img/serviceimg/smarthome.jpg",
   },
   {
     id: 2,
     title: "Drone Cinematography",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB53QrfZ7DR_v_a01p48T9z8scz-VZiPVyyDjjHK9l3PMWwtY4",
+    image:"/img/serviceimg/dron.png",
   },
   {
     id: 3,
     title: "Remote Mointoring",
-    image:
-      "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQWDzF6vgYCJlFDkmZN2it2luyLxiyt0Mo3w6qXTiI1sEe0FOkX  ",
+    image:"/img/serviceimg/remote.jpeg",
   },
 ];
 
@@ -105,7 +103,7 @@ const Page = () => {
             className="et_parallax_bg absolute inset-0 w-full"
             style={{
               backgroundImage:
-                'url("https://neotechdevs.com/wp-content/uploads/2022/08/security-cam-scaled.jpg")',
+                'url("/img/serviceimg/bghomesecurity.jpg")',
             }}
           >
             <div
@@ -414,13 +412,15 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-                    <div className="relative h-[240px]">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full rounded-lg object-cover"
-                      />
-                    </div>
+                                      <div className="relative w-full h-64"> 
+                                         <Image
+                                           src={service.image}
+                                           alt={service.title}
+                                           layout="fill"
+                                           objectFit="cover"
+                                           className="rounded-lg"
+                                         />
+                                       </div>
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}
