@@ -1,8 +1,8 @@
 "use client";
-import {useRef} from "react";
+import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion"; 
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 const services = [
@@ -98,7 +98,7 @@ const Page = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative overflow-hidden pt-8 text-white bg-black">
+      <section className="relative overflow-hidden pt-8 text-white bg-[#001420]">
         {/* background image */}
         <div className="absolute inset-0 z-0">
           <img
@@ -106,244 +106,273 @@ const Page = () => {
             alt="Background"
             className="object-cover w-full h-full"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-80"></div>
+          <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
         </div>
 
         <div className="container relative z-10 mt-16 py-7 mb-12 px-4">
-  <div className="flex justify-center flex-wrap">
-    {/* Left Content Column */}
-    <div className="w-full lg:w-[700px] lg:mb-0">
-      <div className="lg:mr-[30px]">
-      <motion.h1
-  {...textAnimation}
-  className="relative inline-block mt-5 text-[20px] font-medium text-white font-montserrat"
->
-  <span className="relative z-10 pr-2">BUILD MOMENTUM</span>
-  <svg
-    className="absolute bottom-[-18px] left-0 w-full h-18 text-emerald-500"
-    viewBox="0 0 210 40"
-    fill="none"
-    stroke="#20c18c"
-    strokeWidth="2"
-  >
-    <motion.path
-      d="M1.907 23.971C41.231 26.0 87.833 30.047 203.869 25.816"
-      strokeDasharray="202"
-      strokeDashoffset="202"
-      initial={{ strokeDashoffset: 202 }}
-      animate={{ strokeDashoffset: 0 }}
-      transition={{ duration: 1 }}
-      className="animate-draw-line-1"
-    />
-    <motion.path
-      d="M199.331 26.16C143.726 23.421 84.627 22.92 -2.42 23.93"
-      strokeDasharray="201.8"
-      strokeDashoffset="201.8"
-      initial={{ strokeDashoffset: 201.8 }}
-      animate={{ strokeDashoffset: 0 }}
-      transition={{ duration: 1 }}
-      className="animate-draw-line-2"
-    />
-  </svg>
-</motion.h1>
+          <div className="flex justify-center flex-wrap">
+            {/* Left Content Column */}
+            <div className="w-full lg:w-[700px] lg:mb-0">
+              <div className="lg:mr-[30px]">
+                <motion.h1
+                  {...textAnimation}
+                  className="relative inline-block mt-5 text-[20px] font-medium text-white font-montserrat"
+                >
+                  <span className="relative z-10 pr-2">BUILD MOMENTUM</span>
+                  <svg
+                    className="absolute bottom-[-18px] left-0 w-full h-18 text-emerald-500"
+                    viewBox="0 0 210 40"
+                    fill="none"
+                    stroke="#20c18c"
+                    strokeWidth="2"
+                  >
+                    <motion.path
+                      d="M1.907 23.971C41.231 26.0 87.833 30.047 203.869 25.816"
+                      strokeDasharray="202"
+                      strokeDashoffset="202"
+                      initial={{ strokeDashoffset: 202 }}
+                      animate={{ strokeDashoffset: 0 }}
+                      transition={{ duration: 1 }}
+                      className="animate-draw-line-1"
+                    />
+                    <motion.path
+                      d="M199.331 26.16C143.726 23.421 84.627 22.92 -2.42 23.93"
+                      strokeDasharray="201.8"
+                      strokeDashoffset="201.8"
+                      initial={{ strokeDashoffset: 201.8 }}
+                      animate={{ strokeDashoffset: 0 }}
+                      transition={{ duration: 1 }}
+                      className="animate-draw-line-2"
+                    />
+                  </svg>
+                </motion.h1>
 
-        <motion.h1
-  {...textAnimation}
-  className=" text-[48px] font-extrabold text-white  font-montserrat tracking-tight mb-2 mt-6 shadow-md"
->
-  Website Design and <br /> Hosting
-</motion.h1>
+                <motion.h1
+                  {...textAnimation}
+                  className=" text-[48px] font-extrabold text-white  font-montserrat tracking-tight mb-2 mt-6 shadow-md"
+                >
+                  Website Design and <br /> Hosting
+                </motion.h1>
 
-<motion.div {...textAnimation}>
-  <h2
-    className="pb-2 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-semibold font-montserrat"
-  >
-    <p className="text-shadow-md">
-      Our website designers are here to provide all digital needs for your business. 
-      We understand your website should be an essential tool used to extend your brand, 
-      designed to target the right message to your audience.
-    </p>
-  </h2>
-</motion.div>
+                <motion.div {...textAnimation}>
+                  <h2 className="pb-2 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-semibold font-montserrat">
+                    <p className="text-shadow-md">
+                      Our website designers are here to provide all digital
+                      needs for your business. We understand your website should
+                      be an essential tool used to extend your brand, designed
+                      to target the right message to your audience.
+                    </p>
+                  </h2>
+                </motion.div>
 
+                <motion.h3
+                  {...textAnimation}
+                  className="pb-3 pt-3 text-[21px] lg:text-[21px] md:text-[18px] sm:text-[16px] font-extrabold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
+                >
+                  A poorly designed, underperforming, or outdated website can
+                  make or break a business.
+                </motion.h3>
 
-<motion.h3
-  {...textAnimation}
-  className="pb-3 pt-3 text-[21px] lg:text-[21px] md:text-[18px] sm:text-[16px] font-extrabold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
->
-  A poorly designed, underperforming, or outdated website can make or break a business.
-</motion.h3>
+                <motion.h2
+                  {...textAnimation}
+                  className="pb-6 text-[20px] lg:text-[22px] md:text-[18px] sm:text-[16px] font-light text-white  text-shadow-md"
+                >
+                  Our hosting services include lightning-fast download and
+                  upload speeds. However, we are flexible to all development
+                  needs and can configure your site to external hosting
+                  providers.
+                </motion.h2>
 
-<motion.h2
-  {...textAnimation}
-  className="pb-6 text-[20px] lg:text-[22px] md:text-[18px] sm:text-[16px] font-light text-white  text-shadow-md"
->
-  Our hosting services include lightning-fast download and upload speeds. However, 
-  we are flexible to all development needs and can configure your site to external hosting providers.
-</motion.h2>
+                <motion.h4
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: false }}
+                  className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
+                >
+                  Capabilities
+                </motion.h4>
 
+                <motion.h2
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: false }}
+                  className="pb-2 text-[18px] lg:text-[22px] md:text-[14px] sm:text-[12px]  text-white leading-relaxed text-shadow-md"
+                >
+                  We design your website or brand identity to reflect your
+                  brand&apos;s strategy, identity, and goals so that you occupy
+                  a prominent position in the market.
+                </motion.h2>
+              </div>
+            </div>
 
-<motion.h4
-  initial={{ opacity: 0, x: 50 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.5 }}
-  viewport={{ once: false }}
-  className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
->
-  Capabilities
-</motion.h4>
+            {/* Right Side Column */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="w-full px-6 mt-16 lg:w-[35%] lg:block hidden"
+            >
+              <div className="p-6 mb-6 rounded bg-[#001420] bg-opacity-50">
+                <h2 className="mb-3 text-xl font-extrabold">
+                  Looking for a new web design agency?
+                </h2>
+                <p className="mb-4 text-gray-300 font-secondary">
+                  Our catalog is an extension of our design, engineering, and
+                  delivery expertise to showcase the true capability of our
+                  team.
+                </p>
+                <a
+                  href="#"
+                  className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
+                >
+                  <span className="flex items-center font-semibold">
+                    <span>VIEW OUR PORTFOLIO</span>
+                    <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+                  </span>
+                </a>
+              </div>
+            </motion.div>
+          </div>
 
+          {/* Services Section */}
+          <div className="md:pl-12  md:ml-6 md:pt-6 lg:mt-14">
+            <div className="grid grid-cols-1 md:flex md:gap-6">
+              {[
+                {
+                  title: "Development Process",
+                  items: [
+                    "Research",
+                    "Discovery",
+                    "Copywriting",
+                    "UI/UX Design",
+                    "SEO",
+                  ],
+                },
+                {
+                  title: "Technology Stack",
+                  items: [
+                    "HTML/CSS",
+                    "SQL/NOSQL",
+                    "PHP",
+                    "Bootstrap",
+                    "Wordpress",
+                    "More",
+                  ],
+                },
+                {
+                  title: "Experience With",
+                  items: [
+                    "Ecommerce",
+                    "Restaurants",
+                    "Medical Offices",
+                    "Small Businesses",
+                    "Real-estate",
+                    "Blogs",
+                    "More",
+                  ],
+                },
+              ].map((section, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className="p-4 w-full md:w-[220px]"
+                >
+                  <h3 className="text-[21px] font-bold text-white font-montserrat shadow-md tracking-tight leading-tight mb-3">
+                    {section.title}
+                  </h3>
 
-<motion.h2
-  initial={{ opacity: 0, x: -50 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 1 }}
-  viewport={{ once: false }}
-  className="pb-2 text-[18px] lg:text-[22px] md:text-[14px] sm:text-[12px]  text-white leading-relaxed text-shadow-md"
->
-  We design your website or brand identity to reflect your brand&apos;s   strategy, 
-  identity, and goals so that you occupy a prominent position in the market.
-</motion.h2>
+                  <ul className="space-y-1">
+                    {section.items.map((item, itemIndex) => (
+                      <li
+                        key={`${section.title}-${itemIndex}`}
+                        className="flex items-center"
+                      >
+                        <span className="flex items-center justify-center w-2 h-2 mr-2 text-white">
+                          <MdPlayArrow className="text-xs" />
+                        </span>
+                        <p className="text-[20px] text-white font-montserrat shadow-md">
+                          {item}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
-      </div>
-    </div>
-
-    {/* Right Side Column */}
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 50 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
-      className="w-full px-6 mt-16 lg:w-[35%] lg:block hidden"
-    >
-      <div className="p-6 mb-6 rounded bg-black bg-opacity-50">
-        <h2 className="mb-3 text-xl font-extrabold">Looking for a new web design agency?</h2>
-        <p className="mb-4 text-gray-300 font-secondary">
-          Our catalog is an extension of our design, engineering, and delivery expertise 
-          to showcase the true capability of our team.
-        </p>
-        <a
-  href="#"
-  className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
->
-  <span className="flex items-center font-semibold">
-    <span>VIEW OUR PORTFOLIO</span>
-    <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
-  </span>
-</a>
-      </div>
-    </motion.div>
-  </div>
-
-  {/* Services Section */}
-  <div className="md:pl-12  md:ml-6 md:pt-6 lg:mt-14">
-    <div className="grid grid-cols-1 md:flex md:gap-6">
-      {[
-        {
-          title: "Development Process",
-          items: ["Research", "Discovery", "Copywriting", "UI/UX Design", "SEO"],
-        },
-        {
-          title: "Technology Stack",
-          items: ["HTML/CSS", "SQL/NOSQL", "PHP", "Bootstrap", "Wordpress", "More"],
-        },
-        {
-          title: "Experience With",
-          items: ["Ecommerce", "Restaurants", "Medical Offices", "Small Businesses", "Real-estate", "Blogs", "More"],
-        },
-      ].map((section, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="p-4 w-full md:w-[220px]"
-        >
-          <h3 className="text-[21px] font-bold text-white font-montserrat shadow-md tracking-tight leading-tight mb-3">
-  {section.title}
-</h3>
-
-          <ul className="space-y-1">
-            {section.items.map((item, itemIndex) => (
-              <li
-                key={`${section.title}-${itemIndex}`}
-                className="flex items-center"
+          {/* Mobile CTA Section */}
+          <div className=" w-[300px] ml-4 lg:hidden bg-[#001420] bg-opacity-50 rounded-lg mt-6">
+            <div className="p-5">
+              <h2 className="mb-3 text-3xl font-bold  text-gray-100 leading-tight">
+                Looking for a new web design agency?
+              </h2>
+              <p className="mb-3 text-gray-300 text-sm leading-relaxed">
+                Our catalog showcases our design, engineering, and delivery
+                expertise.
+              </p>
+              <a
+                href="#"
+                className="inline-block px-5 py-2 text-sm font-medium text-emerald-500 uppercase bg-white rounded-md"
               >
-                <span className="flex items-center justify-center w-2 h-2 mr-2 text-white">
-                  <MdPlayArrow className="text-xs" />
+                VIEW PORTFOLIO
+              </a>
+            </div>
+
+            <div className="flex items-center justify-center p-3">
+              <div className="flex items-center w-full max-w-xs">
+                <div className="flex-grow border-t border-gray-600"></div>
+                <span className="mx-4 text-sm text-gray-300 font-medium">
+                  or
                 </span>
-                <p className="text-[20px] text-white font-montserrat shadow-md">{item}</p>
+                <div className="flex-grow border-t border-gray-600"></div>
+              </div>
+            </div>
 
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      ))}
-    </div>
-  </div>
+            <div className="p-5">
+              <h2 className="mb-3  text-3xl font-bold text-gray-100 leading-tight">
+                Let&apos;s Start a web design conversation
+              </h2>
+              <p className="mb-3 text-gray-300 text-sm leading-relaxed">
+                Let us know your requirements and start your digital
+                transformation.
+              </p>
+              <a
+                href="#"
+                className="inline-block px-14 py-2 text-sm font-medium text-white bg-[#38b2ac] rounded-md"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
 
-  {/* Mobile CTA Section */}
-  <div className=" w-[300px] ml-4 lg:hidden bg-black bg-opacity-50 rounded-lg mt-6">
-    <div className="p-5">
-      <h2 className="mb-3 text-3xl font-bold  text-gray-100 leading-tight">
-        Looking for a new web design agency?
-      </h2>
-      <p className="mb-3 text-gray-300 text-sm leading-relaxed">
-        Our catalog showcases our design, engineering, and delivery expertise.
-      </p>
-      <a
-        href="#"
-        className="inline-block px-5 py-2 text-sm font-medium text-emerald-500 uppercase bg-white rounded-md"
-      >
-        VIEW PORTFOLIO
-      </a>
-    </div>
-
-    <div className="flex items-center justify-center p-3">
-      <div className="flex items-center w-full max-w-xs">
-        <div className="flex-grow border-t border-gray-600"></div>
-        <span className="mx-4 text-sm text-gray-300 font-medium">or</span>
-        <div className="flex-grow border-t border-gray-600"></div>
-      </div>
-    </div>
-
-    <div className="p-5">
-      <h2 className="mb-3  text-3xl font-bold text-gray-100 leading-tight">
-        Let&apos;s Start a web design conversation
-      </h2>
-      <p className="mb-3 text-gray-300 text-sm leading-relaxed">
-        Let us know your requirements and start your digital transformation.
-      </p>
-      <a
-        href="#"
-        className="inline-block px-14 py-2 text-sm font-medium text-white bg-[#0c99d1] rounded-md"
-      >
-        Contact Us
-      </a>
-    </div>
-  </div>
-
-  {/* Desktop Contact Button */}
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8, y: 50 }}
-    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true }}
-    className="lg:block hidden pt-8"
-  >
-    <a
-      href="#"
-      className="w-full lg:w-[1000px] h-10 items-center justify-center flex mx-auto py-2 text-[14px] font-[500] text-white transition-all rounded bg-[#2ea3f2] hover:bg-[#2ea3f2] group relative"
-    >
-      <span className="flex justify-center items-center gap-2">
-        <span>Contact Us</span>
-        <AiOutlineRight className="h-4 w-5 mt-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
-      </span>
-    </a>
-  </motion.div>
-</div>
+          {/* Desktop Contact Button */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="lg:block hidden pt-8"
+          >
+            <a
+              href="#"
+              className="w-full lg:w-[1000px] h-10 items-center justify-center flex mx-auto py-2 text-[14px] font-[500] text-white transition-all rounded bg-[#38b2ac] hover:bg-[#38b2ac] group relative"
+            >
+              <span className="flex justify-center items-center gap-2">
+                <span>Contact Us</span>
+                <AiOutlineRight className="h-4 w-5 mt-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+              </span>
+            </a>
+          </motion.div>
+        </div>
       </section>
-      <section className="py-12 bg-black text-white">
+      {/* Carousal Section */}
+      <section className="py-12 bg-[#001420] text-white">
         <div className="max-w-6xl mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, x: 100 }}
@@ -390,7 +419,7 @@ const Page = () => {
                     style={{ width: "100%", minHeight: "280px" }}
                   >
                     <div className="absolute top-4 right-4 z-10">
-                      <span className="bg-green-400 text-blue-500 text-sm px-3 py-1 rounded-full">
+                      <span className="bg-[#38b2ac] text-white text-sm px-3 py-1 rounded-full">
                         Related Service
                       </span>
                     </div>
@@ -401,7 +430,7 @@ const Page = () => {
                         className="w-full h-full rounded-lg object-cover"
                       />
                     </div>
-                    <div className="p-2 flex justify-center bg-black">
+                    <div className="p-2 flex justify-center bg-[#001420] ">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}
                       </h3>

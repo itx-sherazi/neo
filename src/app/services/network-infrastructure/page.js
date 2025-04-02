@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion"; 
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 const services = [
@@ -136,8 +136,8 @@ const Page = () => {
   <svg
     className="absolute bottom-[-5px] left-0 text-emerald-500"
     style={{
-      width: "100%", // ✅ Text ki width ke mutabiq hoga
-      height: "40px", // ✅ Balanced height
+      width: "100%", 
+      height: "40px",
       overflow: "visible",
       pointerEvents: "none",
     }}
@@ -378,7 +378,9 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="py-12 bg-black text-white">
+
+      {/* Carousal Section */}
+      <section className="py-12 bg-[#001420] text-white">
         <div className="max-w-6xl mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, x: 100 }}
@@ -425,7 +427,7 @@ const Page = () => {
                     style={{ width: "100%", minHeight: "280px" }}
                   >
                     <div className="absolute top-4 right-4 z-10">
-                      <span className="bg-green-400 text-blue-500 text-sm px-3 py-1 rounded-full">
+                      <span className="bg-[#38b2ac] text-white text-sm px-3 py-1 rounded-full">
                         Related Service
                       </span>
                     </div>
@@ -436,7 +438,7 @@ const Page = () => {
                         className="w-full h-full rounded-lg object-cover"
                       />
                     </div>
-                    <div className="p-2 flex justify-center bg-black">
+                    <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-xl  text-[#3e413e] tracking-tight leading-tight">
                         {service.title}
                       </h3>

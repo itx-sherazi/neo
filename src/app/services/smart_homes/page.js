@@ -2,7 +2,7 @@
 import {useRef} from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion"; 
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 const services = [
@@ -364,7 +364,7 @@ We design a smart home just for you. All the capabilities you want, none of the 
   >
     <a
       href="#"
-      className="w-full lg:w-[1000px] h-10 items-center justify-center flex mx-auto py-2 text-[14px] font-[500] text-white transition-all rounded bg-[#2ea3f2] hover:bg-[#2ea3f2] group relative"
+      className="w-full lg:w-[1000px] h-10 items-center justify-center flex mx-auto py-2 text-[14px] font-[500] text-white transition-all rounded bg-[#38b2ac] hover:bg-[#38b2ac] group relative"
     >
       <span className="flex justify-center items-center gap-2">
         <span>Contact Us</span>
@@ -374,7 +374,8 @@ We design a smart home just for you. All the capabilities you want, none of the 
   </motion.div>
 </div>
       </section>
-      <section className="py-12 bg-black text-white">
+      {/* Carousal Section */}
+      <section className="py-12 bg-[#001420] text-white">
         <div className="max-w-6xl mx-auto px-4">
         <motion.h1
   initial={{ opacity: 0, x: 100 }}
@@ -423,7 +424,7 @@ We design a smart home just for you. All the capabilities you want, none of the 
                     style={{ width: "100%", minHeight: "280px" }}
                   >
                     <div className="absolute top-4 right-4 z-10">
-                      <span className="bg-green-400 text-blue-500 text-sm px-3 py-1 rounded-full">
+                      <span className="bg-[#38b2ac] text-white text-sm px-3 py-1 rounded-full">
                         Related Service
                       </span>
                     </div>
@@ -434,7 +435,7 @@ We design a smart home just for you. All the capabilities you want, none of the 
                         className="w-full h-full rounded-lg object-cover"
                       />
                     </div>
-                    <div className="p-2 flex justify-center bg-black">
+                    <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}
                       </h3>

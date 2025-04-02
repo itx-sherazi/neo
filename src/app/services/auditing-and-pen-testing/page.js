@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion"; 
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 const services = [
@@ -128,39 +128,39 @@ const Page = () => {
             {/* Left Content Column */}
             <div className="w-full lg:w-3/6 lg:mb-0">
               <div className="lg:mr-[30px]">
-              <motion.h1
-  {...textAnimation}
-  className="relative inline-block mt-5 text-[30px] text-white"
->
-  <span className="relative z-10 pr-2">COMPLIANCE SIMPLIFIED</span>
-  
-  <svg
-    className="absolute bottom-[-10px] left-0 text-emerald-500"
-    style={{
-      width: "100%", 
-      height: "70px", 
-     
-    }}
-    viewBox="0 0 210 40"
-    fill="none"
-    stroke="#20c18c"
-    strokeWidth="2"
-  >
-    <path
-      d="M-0.40488177900627903 38.957866487828106 C77.89434224715974 36.424522708148594, 160.06540869933815 37.55047628751133, 351.89434202074364 36.60521078555538"
-      fill="none"
-      stroke="#20c18c"
-      strokeWidth="2"
-    />
-    <path
-      d="M352.7535829531686 38.800345643166175 C216.70154140339062 35.72595543169615, 82.94478999604122 36.663951510096815, -0.9818106419715175 38.498841352173656"
-      fill="none"
-      stroke="#20c18c"
-      strokeWidth="2"
-    />
-  </svg>
-</motion.h1>
+                <motion.h1
+                  {...textAnimation}
+                  className="relative inline-block mt-5 text-[30px] text-white"
+                >
+                  <span className="relative z-10 pr-2">
+                    COMPLIANCE SIMPLIFIED
+                  </span>
 
+                  <svg
+                    className="absolute bottom-[-10px] left-0 text-emerald-500"
+                    style={{
+                      width: "100%",
+                      height: "70px",
+                    }}
+                    viewBox="0 0 210 40"
+                    fill="none"
+                    stroke="#20c18c"
+                    strokeWidth="2"
+                  >
+                    <path
+                      d="M-0.40488177900627903 38.957866487828106 C77.89434224715974 36.424522708148594, 160.06540869933815 37.55047628751133, 351.89434202074364 36.60521078555538"
+                      fill="none"
+                      stroke="#20c18c"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M352.7535829531686 38.800345643166175 C216.70154140339062 35.72595543169615, 82.94478999604122 36.663951510096815, -0.9818106419715175 38.498841352173656"
+                      fill="none"
+                      stroke="#20c18c"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </motion.h1>
 
                 <motion.h1
                   {...textAnimation}
@@ -196,7 +196,9 @@ const Page = () => {
                   Our Pen Testers are certified to deliver results from ensuring
                   CVEs are not present, to recommending solutions for weak
                   encryption, password rotation, and more.
-                  <p className="text-white text-sm italic">(Results may vary *)</p>
+                  <p className="text-white text-sm italic">
+                    (Results may vary *)
+                  </p>
                 </motion.h2>
 
                 <motion.h4
@@ -255,71 +257,74 @@ const Page = () => {
 
           {/* Services Section */}
           <div className="md:pl-20 md:ml-6 md:pt-6 lg:mt-4 lg:mb-5">
-  <div className="grid grid-cols-1 md:flex md:gap-6">
-    {[
-      {
-        title: "Auditing",
-        items: [
-          "Network",
-          "PCs",
-          "Servers",
-          "Wi-Fi",
-          "Cloud Infrastructure",
-          "Hybrid Cloud",
-          "More",
-        ],
-      },
-      {
-        title: "Pen Testing",
-        items: [
-          "Active",
-          "Passive",
-          "Dictionary",
-          "Kali",
-          "Network Sniffing",
-          "Exploit Exfiltration",
-          "More",
-        ],
-      },
-      {
-        title: "Reports",
-        items: [
-          "Generated Audits",
-          "Post Pen-Test",
-          "Remediations",
-          "Vulnerability Discovery",
-          "Compliance",
-        ],
-      },
-    ].map((section, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="p-4 w-full md:w-[270px]"
-      >
-        <h3 className="text-[16px]  text-[#666966] font-montserrat  tracking-tight leading-tight mb-3">
-          {section.title}
-        </h3>
+            <div className="grid grid-cols-1 md:flex md:gap-6">
+              {[
+                {
+                  title: "Auditing",
+                  items: [
+                    "Network",
+                    "PCs",
+                    "Servers",
+                    "Wi-Fi",
+                    "Cloud Infrastructure",
+                    "Hybrid Cloud",
+                    "More",
+                  ],
+                },
+                {
+                  title: "Pen Testing",
+                  items: [
+                    "Active",
+                    "Passive",
+                    "Dictionary",
+                    "Kali",
+                    "Network Sniffing",
+                    "Exploit Exfiltration",
+                    "More",
+                  ],
+                },
+                {
+                  title: "Reports",
+                  items: [
+                    "Generated Audits",
+                    "Post Pen-Test",
+                    "Remediations",
+                    "Vulnerability Discovery",
+                    "Compliance",
+                  ],
+                },
+              ].map((section, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className="p-4 w-full md:w-[270px]"
+                >
+                  <h3 className="text-[16px]  text-[#666966] font-montserrat  tracking-tight leading-tight mb-3">
+                    {section.title}
+                  </h3>
 
-        <ul className="space-y-1">
-          {section.items.map((item, itemIndex) => (
-            <li key={`${section.title}-${itemIndex}`} className="flex items-center">
-              <span className="flex items-center justify-center w-2 h-2 mr-2 text-white">
-                <MdPlayArrow className="text-xs" />
-              </span>
-              <p className="text-[16px] text-[#666966] font-montserrat shadow-md">
-                {item}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </motion.div>
-    ))}
-  </div>
-</div>
+                  <ul className="space-y-1">
+                    {section.items.map((item, itemIndex) => (
+                      <li
+                        key={`${section.title}-${itemIndex}`}
+                        className="flex items-center"
+                      >
+                        <span className="flex items-center justify-center w-2 h-2 mr-2 text-white">
+                          <MdPlayArrow className="text-xs" />
+                        </span>
+                        <p className="text-[16px] text-[#666966] font-montserrat shadow-md">
+                          {item}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
           {/* Mobile CTA Section */}
           <div className="w-full px-4 lg:hidden bg-black bg-opacity-50 rounded-lg ">
@@ -390,7 +395,8 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="py-12 bg-black text-white">
+      {/* Carousal Section */}
+      <section className="py-12 bg-[#001420] text-white">
         <div className="max-w-6xl mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, x: 100 }}
@@ -437,7 +443,7 @@ const Page = () => {
                     style={{ width: "100%", minHeight: "280px" }}
                   >
                     <div className="absolute top-4 right-4 z-10">
-                      <span className="bg-green-400 text-blue-500 text-sm px-3 py-1 rounded-full">
+                      <span className="bg-[#38b2ac] text-white text-sm px-3 py-1 rounded-full">
                         Related Service
                       </span>
                     </div>
@@ -448,7 +454,7 @@ const Page = () => {
                         className="w-full h-full rounded-lg object-cover"
                       />
                     </div>
-                    <div className="p-2 flex justify-center bg-black">
+                    <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl  text-[#3e413e] tracking-tight leading-tight">
                         {service.title}
                       </h3>
