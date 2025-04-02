@@ -1,296 +1,384 @@
-'use client';
-import { useEffect, useRef, useState } from "react";
+"use client";
+import {useRef} from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
 import { motion } from "framer-motion"; // Import motion
-import { AiOutlineRight } from 'react-icons/ai';
+import { AiOutlineRight } from "react-icons/ai";
+import Slider from "react-slick";
 const services = [
   {
     id: 1,
-    title: "Drone Cinematography",
-    image: "https://i0.wp.com/www.splento.com/blog/wp-content/uploads/2023/09/Drone-videography.jpg?resize=1200%2C675&ssl=1",
+    title: "Auditing & Pen Testing",
+    image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT53cGOjB0Yr-lRd5-nFRnAJ8_feFZQpiQ6ywKUj_MlOc4mH64I",
   },
-  {
-    id: 2,
-    title: "Network Infrastructure",
-    image: "https://img.freepik.com/premium-photo/server-rack-with-blue-red-ethernet-cables-connected-internet-networking_1294002-3629.jpg",
-  },
+  
+    {
+      id: 2,
+      title: "Remote Mointoring",
+      image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQWDzF6vgYCJlFDkmZN2it2luyLxiyt0Mo3w6qXTiI1sEe0FOkX  ",
+    },
   {
     id: 3,
-    title: "Digital Marketing",
-    image: "https://images.unsplash.com/photo-1611262588024-d12430b98920?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Network Infrastructure",
+    image:
+      "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRoXv3Azd8HiJxg5-a8LJQsOCPATV3Vq2xHk06arIV4-deAUcMG",
   },
 ];
 
 const Page = () => {
-  const [items, setItems] = useState(services);
-  const containerRef = useRef(null);
-  
-  const handleScroll = (direction) => {
-    if (direction === "next") {
-      setItems((prev) => [...prev.slice(1), prev[0]]);
-    } else {
-      setItems((prev) => [prev[prev.length - 1], ...prev.slice(0, -1)]);
-    }
+  const sliderRef = useRef(null);
+
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => handleScroll("next"), 2000);
-    return () => clearInterval(interval);
-  }, []);
+  const CustomPrevArrow = (props) => (
+    <button
+      {...props}
+      className="absolute left-4 top-[40%] -translate-y-1/2 w-10 h-10 flex items-center justify-center z-20 md:-left-12 md:text-gray-700 text-white"
+      aria-label="Previous service"
+    >
+      <ChevronLeft size={36} />
+    </button>
+  );
+
+  const CustomNextArrow = (props) => (
+    <button
+      {...props}
+      className="absolute right-4 top-[40%] -translate-y-1/2 w-10 h-10 flex items-center justify-center z-20 md:-right-12 md:text-gray-700 text-white"
+      aria-label="Next service"
+    >
+      <ChevronRight size={36} />
+    </button>
+  );
+
   const textAnimation = {
-    initial: { 
-      opacity: 0, 
+    initial: {
+      opacity: 0,
       y: 20,
-      scale: 0.95
+      scale: 0.95,
     },
-    whileInView: { 
-      opacity: 1, 
+    whileInView: {
+      opacity: 1,
       y: 0,
-      scale: 1
+      scale: 1,
     },
-    transition: { 
-      duration: 0.8, 
-      ease: "easeOut" 
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
     },
-    viewport: { 
-      once: true, 
-      amount: 0.3 
-    }
+    viewport: {
+      once: true,
+      amount: 0.3,
+    },
   };
-  
+
   return (
     <div className="min-h-screen">
-      <section className="relative overflow-hidden text-white bg-black">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://neotechdevs.com/wp-content/uploads/2022/03/pexels-christina-morillo-1181271-scaled.jpg"
-            alt="Background"
-            className="object-cover w-full h-full"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-80"></div>
-        </div>
+      <section className="relative overflow-hidden pt-8 text-white bg-black">
+        {/* background image */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+  <div
+    className="et_parallax_bg absolute inset-0 w-full"
+    style={{
+      backgroundImage: 'url("https://neotechdevs.com/wp-content/uploads/2022/08/cloud-computing-scaled.jpg")',
+    }}
+  >
+    <div 
+      className="absolute inset-0"
+      style={{
+        backgroundImage: 'linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 100%)' // Updated gradient
+      }}
+    ></div>
+  </div>
+</div>
 
-        <div className="container relative z-10 mt-24 py-7 mb-12 px-4">
-          <div className="flex justify-center flex-wrap">
-            <div className="w-full lg:w-3/6 lg:mb-0">
-            <div className="container lg:mr-[50px]">
-            <motion.h1 
+
+
+        <div className=" relative z-10 md:mt-20 py-7 mb-12 px-4">
+  <div className="flex justify-center flex-wrap">
+    {/* Left Content Column */}
+    <div className="w-full lg:w-3/6 lg:mb-0">
+      <div className="lg:mr-[30px]">
+      <motion.h1
   {...textAnimation}
-  className="relative inline-block text-2xl font-bold text-white"
+  className="relative inline-block mt-5 text-[22px] font-medium text-white font-montserrat"
 >
-<span className="relative z-10 pr-2">BUILD MOMENTUM</span>
-        <svg
-          className="absolute bottom-[-18px] left-0 w-full h-18 text-emerald-500"
-          viewBox="0 0 210 40"
-          fill="none"
-          stroke="#20c18c"
-          strokeWidth="2"
-        >
-          <motion.path
-            d="M1.907 23.971C41.231 26.0 87.833 30.047 203.869 25.816"
-            strokeDasharray="202"
-            strokeDashoffset="202"
-            initial={{ strokeDashoffset: 202 }}
-            animate={{ strokeDashoffset: 0 }}
-            transition={{ duration: 1 }}
-            className="animate-draw-line-1"
-          />
-          <motion.path
-            d="M199.331 26.16C143.726 23.421 84.627 22.92 -2.42 23.93"
-            strokeDasharray="201.8"
-            strokeDashoffset="201.8"
-            initial={{ strokeDashoffset: 201.8 }}
-            animate={{ strokeDashoffset: 0 }}
-            transition={{ duration: 1 }}
-            className="animate-draw-line-2"
-          />
-        </svg>
+  <span className="relative z-10 pr-2">
+    RESILIANCE & ELASTICITY DELIVERED
+  </span>
+
+  <svg
+    className="absolute bottom-[-10px] left-0 w-full h-[60px] text-emerald-500"
+    viewBox="0 0 330 50"
+    fill="none"
+    stroke="#20c18c"
+    strokeWidth="2"
+  >
+    <path
+      d="M-1.4507875095262635 45.4313362827378 C120.04144064665074 41.64620365536448, 243.22365160738528 41.819504476870605, 331.26465785891753 45.252535257245334"
+      fill="none"
+      stroke="#20c18c"
+      strokeWidth="2"
+    />
+    <path
+      d="M328.9864328350791 46.76051390161125 C201.45775181295923 46.76492761249716, 73.92623336460787 47.75442949965497, 1.1242837111900366 46.610465054255165"
+      fill="none"
+      stroke="#20c18c"
+      strokeWidth="2"
+    />
+  </svg>
 </motion.h1>
 
-<motion.h1 
+
+        <motion.h1
   {...textAnimation}
-  className="pb-3 text-[25px] sm:text-[30px] md:text-[35px] lg:text-[50px] font-bold tracking-tight mb-4 mt-4 leading-tight"
+  className="pb-4 text-[45px] font-extrabold text-white leading-[1.3em] font-montserrat tracking-tight mb-2 mt-3 shadow-md"
 >
-  Website Design and <br /> Hosting
+Cloud Migration Strategies
 </motion.h1>
 
-<motion.div 
-  {...textAnimation}
->
-  <h2 className="pb-[11px] text-[21px] lg:text-[22px] md:text-[18px] sm:text-[16px] leading-relaxed">
-    <p className="font-medium">
-    Our website designers are here to provide all digital needs for your business. We understand your website should be an essential tool used to extend your brand, designed to target the right message to your audience.
+<motion.div {...textAnimation}>
+  <h2
+    className="pb-4 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-semibold font-montserrat"
+  >
+    <p className="text-shadow-md">
+    Does your business need a Hybrid Cloud? Are you ready to go full cloud?
+
     </p>
   </h2>
 </motion.div>
 
+
 <motion.h3
   {...textAnimation}
-  className="pb-[11px] text-[20px] lg:text-[22px] md:text-[16px] sm:text-[14px] font-extrabold text-white my-4 loading-tight"
+  className=" pb-3 text-[21px] lg:text-[24px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
 >
-
-A poorly designed, underperforming, or outdated website can make or break a business.
+Let us assist you in migrating your existing infrastructure from a full On-Prem Solution to a hybrid or full cloud-based solutions.
 </motion.h3>
 
 <motion.h2
   {...textAnimation}
-  className="pb-[20px] text-[21px] lg:text-[21px] md:text-[18px] sm:text-[16px] text-[14px] font-light leading-relaxed"
->Our hosting services include lightning-fast download and upload speeds. However, we are flexible to all development needs and can configure your site to external hosting providers.
+  className="mb-9 mt-5 text-[20px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-light text-white leading-[1.8em] drop-shadow-md"
+>
+We recommend the best cloud providers for your use case scenarios and assist during the migration too! Let us bring your business into a Hyper-scalable model today!
+
 </motion.h2>
-      <motion.h4
-  initial={{ opacity: 0, x: 50 }} // Right se aaye
+
+
+
+<motion.h4
+  initial={{ opacity: 0, x: 50 }}
   whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.5 }} // Tez speed se aaye
-  viewport={{ once: false }} // Bar bar trigger hoga scroll par
-  className="pb-[15px] text-[30px] lg:text-[30px] md:text-[24px] sm:text-[20px] text-[18px] font-[800] text-white"
+  transition={{ duration: 0.5 }}
+  viewport={{ once: false }}
+  className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
 >
   Capabilities
 </motion.h4>
 
-      
-      <motion.h2
+
+<motion.h2
   initial={{ opacity: 0, x: -50 }}
   whileInView={{ opacity: 1, x: 0 }}
   transition={{ duration: 1 }}
-  viewport={{ once: false }} // Ye bar bar trigger hoga scroll par
-  className="pb-[20px] text-[20px] lg:text-[20px] md:text-[14px] sm:text-[12px] text-[10px] font-semibold"
+  viewport={{ once: false }}
+  className="pb-2 text-[18px] lg:text-[20px] md:text-[14px] sm:text-[12px] font-semibold text-white leading-relaxed text-shadow-md"
 >
-  We design your website or brand identity to reflect your brand's strategy, identity, and goals so that you occupy a prominent position in the market.
+Ample experience in moving on-prem to cloud-based deployments. From microservices VPS to full IaaS cloud solutions. We will provide great options to tailor each requirement.
 </motion.h2>
-
+      </div>
     </div>
-            </div>
-            <motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 50 }} // Hidden + Zoomed Out + Neeche
-      animate={{ opacity: 1, scale: 1, y: 0 }} // Smoothly Zoom-in + Upar aayega
-      transition={{ duration: 1.2, ease: "easeOut" }} // Smooth animation effect
-      className="w-full px-8 lg:w-[35%] lg:block hidden"
+
+    {/* Right Side Column */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8, y: 50 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="w-full px-6 mt-3 lg:w-[34%]  lg:h-full lg:block hidden"
     >
-      <div className="p-6 mb-8 rounded bg-black bg-opacity-50">
-        <h2 className="mb-4 text-2xl font-extrabold">
-          Looking for a new web design agency?
-        </h2>
-        <p className="mb-6 text-gray-300 font-secondary">
-          Our catalog is an extension of our design, engineering, and
-          delivery expertise to showcase the true<br /> capability of our team.
+      <div className="p-6 mb-6 rounded bg-black bg-opacity-50">
+        <h2 className="mb-3  text-2xl font-extrabold"> Looking for Migration Suggestions?</h2>
+        <p className="mb-4 mt-4 text-[18px] text-gray-300 font-secondary">
+        Our Team is ready to assist in your business needs to move to the cloud.
+
+
         </p>
         <a
-          href="#"
-          className="inline-block px-7 py-2 font-[500] text-[16px] text-[#20C18C] uppercase transition-all rounded bg-white"
-        >
-          VIEW OUR PORTFOLIO
-        </a>
-      </div>
-    </motion.div>
-          </div>
-          <div className="md:pl-24  md:pt-8">
-          <div className="grid grid-cols-1 md:flex md:gap-8">
-      {[
-        { title: "Development Process", items: ["Research", "Discovery", "Copywriting", "UI / UX Design", "SEO"] },
-        { title: "Technology Stack", items: ["HTML / CSS", "SQL / NOSQL", "PHP", "Bootstrap", "Wordpress", "More"] },
-        { title: "Experience With", items: ["Ecommerce", "Restaurants", "Medical Offices", "Small Businesses", "Real-estate", "Blogs", "More"] },
-      ].map((section, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 100 }} // Pehle neeche hide hoga
-          whileInView={{ opacity: 1, y: 0 }} // Scroll hone par smoothly upar aayega
-          transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
-          viewport={{ once: true }} // Sirf ek baar trigger hoga
-          className="p-5 w-full md:w-[230px]"
-        >
-          <h3 className="mb-5 text-2xl font-bold tracking-tight leading-tight">{section.title}</h3>
-          <ul className="space-y-1">
-            {section.items.map((item, itemIndex) => (
-              <li key={`${section.title}-${itemIndex}`} className="flex items-center">
-                <span className="flex items-center justify-center w-3 h-3 mr-2 text-white">
-                  <MdPlayArrow className="text-xs" />
-                </span>
-                <p className="text-lg font-medium text-white">{item}</p>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      ))}
-    </div>
-</div>
-<div className="w-full px-4 lg:hidden bg-black bg-opacity-50 rounded-lg">
-  {/* First CTA Section */}
-  <div className="p-6 ">
-    <h2 className="mb-4 text-xl font-bold text-gray-100 leading-tight">
-      Looking for a new web design agency?
-    </h2>
-    <p className="mb-4 text-gray-300 text-sm leading-relaxed">
-      Our catalog is an extension of our design, engineering, and delivery expertise 
-      to showcase the true capability of our team.
-    </p>
-    <a
-      href="#"
-      className="inline-block px-5 py-2 text-sm font-medium text-emerald-500 uppercase bg-white rounded-md hover:bg-gray-50 transition-colors"
-    >
-      VIEW OUR PORTFOLIO
-    </a>
-  </div>
-
-  {/* Divider with Lines */}
-  <div className="flex items-center justify-center p-4 ">
-    <div className="flex items-center w-full max-w-xs">
-      <div className="flex-grow border-t border-gray-600"></div>
-      <span className="mx-4 text-sm text-gray-300 font-medium">or</span>
-      <div className="flex-grow border-t border-gray-600"></div>
-    </div>
-  </div>
-
-  {/* Second CTA Section */}
-  <div className="p-6">
-    <h2 className="mb-4 text-xl font-bold text-gray-100 leading-tight">
-      Let&apos;s start a web design conversation.
-    </h2>
-    <p className="mb-4 text-gray-300 text-sm leading-relaxed">
-      Like what you see? Start working with us by providing your needs and details.
-    </p>
-    <a
-      href="#"
-      className="inline-block px-14 py-2 text-sm font-medium text-white bg-[#0c99d1] rounded-md transition-colors"
-    >
-      Contact Us
-    </a>
-  </div>
-</div>
-<motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 50 }} // Pehle hidden, chhota, aur neeche hoga
-      whileInView={{ opacity: 1, scale: 1, y: 0 }} // Scroll par smoothly appear hoga
-      transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
-      viewport={{ once: true }} // Sirf ek baar animation trigger hoga
-      className="lg:block hidden pt-10"
-    >
-      
-      <a
   href="#"
-  className="w-full lg:w-[1100px] h-10 items-center justify-center flex ml-0 lg:ml-[7%] py-2 text-[12px] text-center font-[500] text-white transition-all rounded bg-[#2ea3f2] hover:bg-[#2ea3f2] group relative"
-  id="contact-us"
+  className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
 >
-  <span className="flex justify-center items-center gap-2">
-    <p className="text-[16px] flex ">
-      <span>Contact Us</span>
-       {/* React Icon */}
-       <AiOutlineRight
-        className="h-4 w-5   mt-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"
-      />
-    </p>
-    
+  <span className="flex items-center font-bold ">
+    <span>INQUIRE</span>
+    <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
   </span>
 </a>
+      </div>
     </motion.div>
-        </div>
+  </div>
+
+{/* Services Section */}
+<div className="md:pl-20 md:ml-6 md:pt-6 lg:mt-14">
+  <div className="grid grid-cols-1 md:flex md:gap-6">
+    {[
+      { 
+        title: "Project Planning", 
+        items: [
+          "Architecture",
+          "Services",
+          "Segmentation",
+          "Elasticity",
+          "Other Deliverables",
+          "More"
+        ] 
+      },
+      { 
+        title: "Cloud Deployment", 
+        items: [
+          "Infrastructure Choice (AWS, Azure, GCP)",
+          "Microservices (Docker, Kubernetes)",
+          "High Availability (HA, Cloudflare, Caching)",
+          "Multi Region (GSLB Load Balancing)",
+          "VPN Connectivity",
+          "More"
+        ] 
+      },
+      { 
+        title: "Cloud Security", 
+        items: [
+          "SSH Keys",
+          "IP Whitelisting",
+          "WAF Lockdown",
+          "ID Lockdown",
+          "More"
+        ] 
+      },
+    ].map((section, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="p-4 w-full md:w-[270px]"
+      >
+        <h3 className="text-[21px] font-bold text-white font-montserrat shadow-md tracking-tight leading-tight mb-3">
+          {section.title}
+        </h3>
+
+        <ul className="space-y-1">
+          {section.items.map((item, itemIndex) => (
+            <li
+              key={`${section.title}-${itemIndex}`}
+              className="flex items-center"
+            >
+              <span className="flex items-center justify-center w-2 h-2 mr-2 text-white">
+                <MdPlayArrow className="text-xs" />
+              </span>
+              <p className="text-[20px] text-white font-montserrat shadow-md">
+                {item}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
+  {/* Mobile CTA Section */}
+  <div className="w-full px-4 lg:hidden bg-black bg-opacity-50 rounded-lg ">
+    <div className="p-5">
+      <h2 className="mb-3 p-4 text-3xl font-bold text-gray-100 leading-tight">
+      Let&apos;s start a marketing converstion.
+      </h2>
+      <p className="mb-3 pl-4 pr-4 text-gray-300 text-sm leading-relaxed">
+      Our Team is ready to assist in your business needs to move to the cloud.
+      </p>
+      <a
+  href="#"
+  className="inline-flex items-center ml-4 px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
+>
+  <span className="flex items-center font-bold ">
+    <span>INQUIRE</span>
+    <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+  </span>
+</a>
+    </div>
+
+    <div className="flex items-center justify-center p-3">
+      <div className="flex items-center w-full max-w-xs">
+        <div className="flex-grow border-t border-gray-600"></div>
+        <span className="mx-4 text-sm text-gray-300 font-medium">or</span>
+        <div className="flex-grow border-t border-gray-600"></div>
+      </div>
+    </div>
+
+    <div className="p-5">
+      <h2 className="mb-7 text-3xl pl-5 pr-4 font-bold text-gray-100 leading-tight">
+      Let&apos;s Talk Cloud Migration.
+      </h2>
+      <p className="mb-5 text-gray-300 pl-5 text-sm leading-relaxed">
+      Like what you see? Start working with us by providing your needs and details
+      </p>
+      <a
+          href="#"
+          className="inline-block px-6 ml-5 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white"
+        >
+        CONTACT US
+        </a>
+    </div>
+  </div>
+
+  {/* Desktop Contact Button */}
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8, y: 50 }}
+    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+    className="lg:block hidden pt-8"
+  >
+    <a
+      href="#"
+      className="w-full lg:w-[1000px] h-10 items-center justify-center flex mx-auto py-2 text-[14px] font-[500] text-white transition-all rounded bg-[#2ea3f2] hover:bg-[#2ea3f2] group relative"
+    >
+      <span className="flex justify-center items-center gap-2">
+        <span>Contact Us</span>
+        <AiOutlineRight className="h-4 w-5 mt-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+      </span>
+    </a>
+  </motion.div>
+</div>
       </section>
       <section className="py-12 bg-black text-white">
         <div className="max-w-6xl mx-auto px-4">
         <motion.h1
-  initial={{ opacity: 0, x: 100 }} // Initially hidden + right side
-  whileInView={{ opacity: 1, x: 0 }} // When 50% of the section is in the viewport
-  transition={{ duration: 1.5, ease: "easeOut" }} // Smooth transition from right to left
-  viewport={{ once: true, amount: 0.5 }} // Trigger the animation only once when 50% of the element is in the viewport
+  initial={{ opacity: 0, x: 100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1.5, ease: "easeOut" }}
+  viewport={{ once: true, amount: 0.5 }}
   className="relative text-4xl font-bold mb-10 inline-block pb-1"
 >
   <span className="relative">
@@ -303,83 +391,59 @@ A poorly designed, underperforming, or outdated website can make or break a busi
       strokeWidth="2"
     >
       <motion.path
-        d="M-0.864 32.104C79.132 36.392 157.123 35.006 210.394 31.261"
-        strokeDasharray="211"
-        strokeDashoffset="211"
+        d="M0.5871608531693153 31.669048849324856 C70.4950003968655 30.292531853249343, 139.19194704102625 31.631962431228278, 206.95766502162178 33.457158481444885"
+        strokeDasharray="212.096"
+        strokeDashoffset="212.096"
         animate={{ strokeDashoffset: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       />
       <motion.path
-        d="M210.727 34.514C167.1 30.495 126.987 31.483 -0.62 34.382"
-        strokeDasharray="211"
-        strokeDashoffset="211"
+        d="M209.55185623271373 31.669092434293095 C164.41254146236474 31.267510143104957, 123.75909396651686 33.65930299106921, 0.8367532792294219 33.2660562018582"
+        strokeDasharray="210.747"
+        strokeDashoffset="210.747"
         animate={{ strokeDashoffset: 0 }}
-        transition={{ duration: 1.5, ease: "easeOut", delay: 0.8 }}
+        transition={{ duration: 0.4, ease: "easeOut", delay: 0.4 }}
       />
     </svg>
   </span>
 </motion.h1>
 
+
           <div className="relative">
-            <button
-              onClick={() => handleScroll("prev")}
-              className="absolute left-4 top-[40%] -translate-y-1/2 w-10 h-10 flex items-center justify-center z-20 md:-left-12 md:text-gray-700 text-white"
-              aria-label="Previous service"
-            >
-              <ChevronLeft size={36} />
-            </button>
-            <div
-              ref={containerRef}
-              className="flex gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar"
-              style={{
-                scrollBehavior: "smooth",
-                scrollSnapType: "x mandatory",
-                WebkitOverflowScrolling: "touch",
-              }}
-            >
-              {items.map((service) => (
-                <div
-                  key={service.id}
-                  className="flex-shrink-0 rounded-lg overflow-hidden relative shadow-lg snap-start transition-all duration-300"
-                  style={{ width: "350px", minHeight: "280px" }}
-                >
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="bg-green-400 text-blue-500 text-sm  px-3 py-1 rounded-full">
-                      Related Service
-                    </span>
+            <CustomPrevArrow onClick={() => sliderRef.current.slickPrev()} />
+
+            <Slider ref={sliderRef} {...settings}>
+              {services.map((service) => (
+                <div key={service.id} className="px-2">
+                  <div
+                    className="rounded-lg overflow-hidden relative shadow-lg"
+                    style={{ width: "100%", minHeight: "280px" }}
+                  >
+                    <div className="absolute top-4 right-4 z-10">
+                      <span className="bg-green-400 text-blue-500 text-sm px-3 py-1 rounded-full">
+                        Related Service
+                      </span>
+                    </div>
+                    <div className="relative h-[240px]">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full rounded-lg object-cover"
+                      />
+                    </div>
+                    <div className="p-2 flex justify-center bg-black">
+                      <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
+                        {service.title}
+                      </h3>
+                    </div>
                   </div>
-                  <div className="relative h-[230px]">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full rounded-lg object-cover"
-                    />
-                  </div>
-                  <div className="p-2 flex justify-center bg-black">
-  <h3 className="text-3xl font-bold text-white tracking-tight leading-tight">
-    {service.title}
-  </h3>
-</div>
                 </div>
               ))}
-            </div>
-            <button
-              onClick={() => handleScroll("next")}
-              className="absolute right-4 top-[40%] -translate-y-1/2 w-10 h-10 flex items-center justify-center z-20 md:-right-12 md:text-gray-700 text-white"
-              aria-label="Next service"
-            >
-              <ChevronRight size={36} />
-            </button>
+            </Slider>
+
+            <CustomNextArrow onClick={() => sliderRef.current.slickNext()} />
           </div>
         </div>
-        <style jsx>{`
-          .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-          }
-          .hide-scrollbar {
-            scrollbar-width: none;
-          }
-        `}</style>
       </section>
     </div>
   );
