@@ -182,13 +182,13 @@ const Page = () => {
 
                 <MotionH1
                   {...textAnimation}
-                  className="pb-4 text-[28px] text-[#3e413e] leading-[1.3em] mb-2 mt-10"
+                  className="pb-4 text-[28px] text-white font-semibold leading-[1.3em] mb-2 mt-10"
                 >
                   Auditing & Pen Testing
                 </MotionH1>
 
                 <MotionDiv {...textAnimation}>
-                  <h2 className="pb-4 text-[20px] text-[#3e413e] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] font-semibold font-montserrat">
+                  <h2 className="pb-4 text-[20px] text-white lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] font-semibold font-montserrat">
                     <p className="text-shadow-md font-bold">
                       Are your Devices and Network Complaint? Bring our Pen
                       Testing Expertise to verify Compliance, and deliver a full
@@ -199,7 +199,7 @@ const Page = () => {
 
                 <MotionH3
                   {...textAnimation}
-                  className="pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-semibold text-[#3e413e] leading-[1.3em] text-shadow-md my-2 font-montserrat"
+                  className="pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-semibold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
                 >
                   95% of businesses have no idea their network has the ability
                   to be compromised in a matter of minutes. Let us deliver a
@@ -209,7 +209,7 @@ const Page = () => {
 
                 <MotionH2
                   {...textAnimation}
-                  className="mb-9 mt-5 text-[20px] lg:text-[24px] md:text-[18px] sm:text-[16px] text-[#3e413e]"
+                  className="mb-9 mt-5 text-[20px] lg:text-[24px] md:text-[18px] sm:text-[16px] text-white"
                 >
                   Our Pen Testers are certified to deliver results from ensuring
                   CVEs are not present, to recommending solutions for weak
@@ -224,7 +224,7 @@ const Page = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: false }}
-                  className="pb-5 text-[29px] lg:text-[18px] md:text-[26px] sm:text-[22px] text-[#3e413e]"
+                  className="pb-5 text-[29px] lg:text-[18px] md:text-[26px] sm:text-[22px] text-white"
                 >
                   Capabilities
                 </MotionH4>
@@ -234,7 +234,7 @@ const Page = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1 }}
                   viewport={{ once: false }}
-                  className="pb-2 text-[18px] lg:text-[26px] md:text-[14px] sm:text-[12px] font-bold text-[#3e413e] leading-relaxed text-shadow-md"
+                  className="pb-2 text-[18px] lg:text-[26px] md:text-[14px] sm:text-[12px] font-bold text-white leading-relaxed text-shadow-md"
                 >
                   Full open source pen testing delivered. Need more? We can
                   deliver Qualys Scans too.
@@ -250,17 +250,17 @@ const Page = () => {
               className="w-full px-6 mt-1 lg:w-[34%] lg:block hidden"
             >
               <div className="mb-6 rounded bg-black/40 h-[230px] bg-opacity-50">
-                <h2 className="mb-3 text-2xl text-[#3e413e]">
+                <h2 className="mb-3 text-2xl font-bold text-white">
                   Looking for Audit or Pen Test Reports?
                 </h2>
-                <p className="mb-4 mt-4 text-[#3e413e] font-secondary">
+                <p className="mb-4 mt-4 text-white font-secondary">
                   Our Team is ready to deliver an up-to-date report on your
                   current infrastructure condition. On-Prem, Cloud, and more, we
                   handle it all.
                 </p>
                 <a
                   href="#"
-                  className="py-2 w-[100px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-white group relative hover:bg-white/15 hover:border-[#444844] hover:w-[180px]"
+                  className="py-2 w-[150px] ml-5 flex items-center justify-center bg-[#009999] text-white transition-all duration-300 rounded  group relative "
                 >
                   <span className="flex justify-center items-center font-semibold">
                     <span className="pl-5">INQUIRE</span>
@@ -318,7 +318,7 @@ const Page = () => {
                   viewport={{ once: true }}
                   className="p-4 w-full md:w-[270px]"
                 >
-                  <h3 className="text-[16px]  text-[#666966] font-montserrat  tracking-tight leading-tight mb-3">
+                  <h3 className="text-[20px] font-bold  text-white font-montserrat  tracking-tight leading-tight mb-3">
                     {section.title}
                   </h3>
 
@@ -331,7 +331,7 @@ const Page = () => {
                         <span className="flex items-center justify-center w-2 h-2 mr-2 text-white">
                           <MdPlayArrow className="text-xs" />
                         </span>
-                        <p className="text-[16px] text-[#666966] font-montserrat shadow-md">
+                        <p className="text-[16px] text-white font-montserrat shadow-md">
                           {item}
                         </p>
                       </li>
@@ -345,10 +345,10 @@ const Page = () => {
           {/* Mobile CTA Section */}
           <div className="w-full px-4 lg:hidden bg-black bg-opacity-50 rounded-lg ">
             <div className="p-5">
-              <h2 className="mb-3 p-4 text-lg font-bold text-[#3e413e] leading-tight">
+              <h2 className="mb-3 p-4 text-lg font-bold text-white leading-tight">
                 Looking for Audit or Pen Test Reports?
               </h2>
-              <p className="mb-3 pl-4 pr-4 text-[#3e413e]  text-sm leading-relaxed">
+              <p className="mb-3 pl-4 pr-4 text-white font-semibold text-sm leading-relaxed">
                 Our Team is ready to deliver an up-to-date report on your
                 current infrastructure condition. On-Prem, Cloud, and more, we
                 handle it all.
@@ -400,8 +400,8 @@ const Page = () => {
           <div className="lg:block hidden  ml-28">
             <a
               href="#"
-              className=" py-3 w-[140px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-white group relative 
-    bg-white/10 hover:bg-white/15 hover:border-[#444844] hover:w-[180px]"
+              className=" py-3 w-[140px] flex items-center justify-center text-white transition-all duration-300 rounded bg-[#38b2ac] group relative 
+"
             >
               <span className="flex justify-center items-center font-semibold ">
                 <span className="pl-5">Contact Us</span>
@@ -473,7 +473,7 @@ const Page = () => {
                       />
                     </div>
                     <div className="p-2 flex justify-center bg-[#001420]">
-                      <h3 className="text-2xl  text-[#3e413e] tracking-tight leading-tight">
+                      <h3 className="text-2xl  text-white tracking-tight leading-tight">
                         {service.title}
                       </h3>
                     </div>

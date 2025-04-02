@@ -194,7 +194,7 @@ const Page = () => {
 
                 <MotionH2
                   {...textAnimation}
-                  className="mb-9 mt-5 text-[20px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-light text-white leading-[1.8em] drop-shadow-md"
+                  className="mb-9 mt-5 text-[20px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-semibold text-white leading-[1.8em] drop-shadow-md"
                 >
                   Be heard through the noise with our marketing services. These
                   services provide you access to our content creators,
@@ -225,7 +225,7 @@ const Page = () => {
                   analytics to demonstrate the accelerated business growth
                   achieved with the package selected.
                 </MotionH2>
-                <p className="text-gray-400 text-sm ml-2">
+                <p className="text-white text-sm ml-2">
                   (Actual Results May Vary*)
                 </p>
               </div>
@@ -242,7 +242,7 @@ const Page = () => {
                 <h2 className="mb-3 text-2xl font-extrabold">
                   We speak marketing so you don&apos;t have to.
                 </h2>
-                <p className="mb-4 mt-4 text-gray-300 font-secondary">
+                <p className="mb-4 mt-4 text-white font-secondary">
                   View some of our testimonials below
                 </p>
                 <a
