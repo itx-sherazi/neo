@@ -117,7 +117,7 @@ const Page = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       <section className="relative overflow-hidden pt-8 text-white bg-black">
         {/* background image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -355,11 +355,11 @@ const Page = () => {
               </p>
               <a
                 href="#"
-                className=" py-2 ml-4  w-[100px] flex items-center justify-center text-[#9fa39f] transition-all duration-300 rounded border-2 border-[#9fa39f] group relative 
+                className=" py-2 ml-4  w-[100px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-white group relative 
      hover:bg-white/15 hover:border-[#444844] hover:w-[180px]"
               >
                 <span className="flex justify-center items-center font-semibold ">
-                  <span className="pl-5 text-[#9fa39f]">INQUIRE</span>
+                  <span className="pl-5 text-white">INQUIRE</span>
                   <AiOutlineRight className="h-[20px] font-semibold w-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </span>
               </a>
@@ -376,20 +376,20 @@ const Page = () => {
             </div>
 
             <div className="p-5">
-              <h2 className="mb-3 text-lg pl-5 pr-4 font-bold text-[#3e413e] leading-tight">
+              <h2 className="mb-3 text-lg pl-5 pr-4 font-bold text-white leading-tight">
                 Let&apos;s start a Pen Testing conversation.
               </h2>
-              <p className="mb-3 text-[#3e413e] pl-5 text-sm leading-relaxed">
+              <p className="mb-3 text-white pl-5 text-sm leading-relaxed">
                 Like what you see? Start working with us by providing your needs
                 and details.
               </p>
               <a
                 href="#"
-                className=" py-2 ml-4  w-[140px] flex items-center justify-center text-[#9fa39f] transition-all duration-300 rounded border-2 border-[#9fa39f] group relative 
+                className=" py-2 ml-4  w-[140px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-white group relative 
      hover:bg-white/15 hover:border-[#444844] hover:w-[180px]"
               >
                 <span className="flex justify-center items-center font-semibold ">
-                  <span className="pl-5 text-[#9fa39f]">CONTACT US</span>
+                  <span className="pl-5 text-white">CONTACT US</span>
                   <AiOutlineRight className="h-[20px] font-semibold w-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </span>
               </a>

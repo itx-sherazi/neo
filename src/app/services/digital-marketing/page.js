@@ -115,77 +115,62 @@ const Page = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       <section className="relative overflow-hidden pt-8 text-white bg-[#001420]">
-        {/* background image */}
+        {/* Background Section */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div
-            className="et_parallax_bg absolute inset-0 w-full"
-            style={{
-              backgroundImage: 'url("/img/serviceimg/bgdigital.jpg")',
-            }}
+            className="absolute inset-0 w-full bg-cover bg-center"
+            style={{ backgroundImage: 'url("/img/serviceimg/bgdigital.jpg")' }}
           >
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage:
-                  "linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.9) 100%)",
-              }}
-            ></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/90" />
           </div>
         </div>
 
-        <div className=" relative z-10 md:mt-20 py-7 mb-12 px-4">
-          <div className="flex justify-center flex-wrap">
+        <div className="relative z-10 md:mt-20 py-7 mb-12 px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row justify-center gap-8 lg:gap-12">
             {/* Left Content Column */}
-            <div className="w-full lg:w-3/6 lg:mb-0">
-              <div className="lg:mr-[30px]">
+            <div className="w-full lg:w-[57%] xl:w-[50%] 2xl:w-[45%]">
+              <div className="max-w-3xl 2xl:max-w-4xl">
                 <MotionH1
                   {...textAnimation}
-                  className="relative inline-block mt-5 text-[22px] font-medium text-white font-montserrat"
+                  className="relative inline-block mt-5 text-lg sm:text-xl md:text-2xl font-medium"
                 >
                   <span className="relative z-10 pr-2">Build Your Brand</span>
                   <svg
-                    className="absolute bottom-[-14px] left-0 w-[200px] h-18 text-emerald-500"
+                    className="absolute bottom-[-14px] left-0 w-[160px] sm:w-[180px] md:w-[200px] h-18"
                     viewBox="0 0 210 40"
-                    fill="none"
                     stroke="#20c18c"
                     strokeWidth="2"
                   >
                     <path
                       d="M0.6524998052045703 29.55421153176576 C47.04466334928122 26.717087206822384, 92.08576316502536 27.58164050934886, 158.56310806702822 25.879164163954556"
                       fill="none"
-                      stroke="#20c18c"
-                      strokeWidth="2"
                     />
                     <path
                       d="M156.1078063296154 24.008997510187328 C118.90908714758213 24.42131695494509, 84.21842937454542 28.8955397640214, 1.2716061221435666 28.43523649405688"
                       fill="none"
-                      stroke="#20c18c"
-                      strokeWidth="2"
                     />
                   </svg>
                 </MotionH1>
 
                 <MotionH1
                   {...textAnimation}
-                  className="pb-4 text-[43px] font-extrabold text-white leading-[1.3em] font-montserrat tracking-tight mb-2 mt-3 shadow-md"
+                  className="pb-4 text-3xl xs:text-4xl sm:text-[2.7rem] md:text-[3rem] lg:text-[3.2rem] font-extrabold leading-[1.2] mt-3 tracking-tight"
                 >
                   Digital Marketing
                 </MotionH1>
 
                 <MotionDiv {...textAnimation}>
-                  <h2 className="pb-4 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-semibold font-montserrat">
-                    <p className="text-shadow-md">
-                      Our Digital Marketing team is ready to take your business
-                      to the next level.
-                    </p>
+                  <h2 className="pb-4 text-base sm:text-lg md:text-xl font-semibold leading-[1.6] md:leading-[1.7]">
+                    Our Digital Marketing team is ready to take your business to
+                    the next level.
                   </h2>
                 </MotionDiv>
 
                 <MotionH3
                   {...textAnimation}
-                  className="pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
+                  className="pb-3 text-lg sm:text-xl md:text-xl font-bold leading-[1.4] md:leading-[1.5]"
                 >
                   Businesses of all kinds have seen new opportunities for growth
                   thanks to the increasing use of social media and other web
@@ -194,7 +179,7 @@ const Page = () => {
 
                 <MotionH2
                   {...textAnimation}
-                  className="mb-9 mt-5 text-[20px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-semibold text-white leading-[1.8em] drop-shadow-md"
+                  className="mb-9 mt-5 text-base sm:text-lg md:text-xl font-semibold leading-[1.6] md:leading-[1.7]"
                 >
                   Be heard through the noise with our marketing services. These
                   services provide you access to our content creators,
@@ -204,30 +189,24 @@ const Page = () => {
                 </MotionH2>
 
                 <MotionH4
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: false }}
-                  className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
+                  {...textAnimation}
+                  className="pb-5 text-xl sm:text-2xl md:text-3xl font-extrabold"
                 >
                   Capabilities
                 </MotionH4>
 
                 <MotionH2
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1 }}
-                  viewport={{ once: false }}
-                  className="pb-2 text-[18px] lg:text-[20px] md:text-[14px] sm:text-[12px] font-semibold text-white leading-relaxed text-shadow-md"
+                  {...textAnimation}
+                  className="pb-2 text-sm sm:text-base md:text-lg font-semibold leading-relaxed"
                 >
                   We have experience transforming brands and can help you too!
                   All of our clients are provided with before and after
                   analytics to demonstrate the accelerated business growth
                   achieved with the package selected.
+                  <span className="block mt-2 text-xs md:text-sm">
+                    (Actual Results May Vary*)
+                  </span>
                 </MotionH2>
-                <p className="text-white text-sm ml-2">
-                  (Actual Results May Vary*)
-                </p>
               </div>
             </div>
 
@@ -235,31 +214,29 @@ const Page = () => {
             <MotionDiv
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-full px-6 mt-1 lg:w-[34%] lg:h-full lg:block hidden"
+              transition={{ duration: 1.2 }}
+              className="hidden lg:block w-full lg:w-[43%] xl:w-[40%] 2xl:w-[35%] mt-8 lg:mt-0"
             >
-              <div className="p-6 mb-6 rounded bg-black bg-opacity-50">
-                <h2 className="mb-3 text-2xl font-extrabold">
-                  We speak marketing so you don&apos;t have to.
+              <div className="p-6 rounded-lg bg-black/50 backdrop-blur-sm border border-white/10">
+                <h2 className="mb-3 text-xl md:text-2xl font-extrabold leading-tight">
+                  We speak marketing so you don’t have to.
                 </h2>
-                <p className="mb-4 mt-4 text-white font-secondary">
+                <p className="mb-4 mt-4 text-sm md:text-base text-gray-200">
                   View some of our testimonials below
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
+                  className="inline-flex items-center px-6 py-3 text-sm md:text-base font-medium text-emerald-500 bg-white rounded-lg hover:bg-gray-50 transition-colors"
                 >
-                  <span className="flex items-center font-semibold">
-                    <span>VIEW OUR PORTFOLIO</span>
-                    <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
-                  </span>
+                  View Portfolio
+                  <AiOutlineRight className="ml-2 h-4 w-4 opacity-70 group-hover:opacity-100 transition-opacity" />
                 </a>
               </div>
             </MotionDiv>
           </div>
 
           {/* Services Section */}
-          <div className="md:pl-20 md:ml-6  md:pt-6 lg:mt-14">
+          <div className="md:pl-8 md:ml-6 lg:mr-3  md:pt-6 lg:mt-6">
             <div className="grid grid-cols-1 md:flex md:gap-6">
               {[
                 {
@@ -330,6 +307,7 @@ const Page = () => {
               ))}
             </div>
           </div>
+
           {/* Mobile CTA Section */}
           <div className="w-full px-4 lg:hidden bg-black bg-opacity-50 rounded-lg ">
             <div className="p-5">
@@ -394,6 +372,7 @@ const Page = () => {
           </motion.div>
         </div>
       </section>
+
       {/* Carousal Section */}
       <section className="py-12 bg-[#001420] text-white">
         <div className="max-w-6xl mx-auto px-4">

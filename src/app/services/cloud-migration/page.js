@@ -96,7 +96,7 @@ const Page = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       <section className="relative overflow-hidden pt-8 text-white bg-black">
         {/* background image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
