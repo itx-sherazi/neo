@@ -161,13 +161,13 @@ const Page = () => {
 
                 <motion.h1
                   {...textAnimation}
-                  className="pb-4 text-[30px]   text-[#3e413e] leading-[1.3em]  mb-2 mt-10  "
+                  className="pb-4 text-[30px]   text-white leading-[1.3em]  mb-2 mt-10  "
                 >
                   Network Infrastructure
                 </motion.h1>
 
                 <motion.div {...textAnimation}>
-                  <h2 className="pb-4 text-[38px] text-[#3e413e] lg:text-[30px] md:text-[16px] sm:text-[14px] font-bold font-montserrat text-shadow-md ">
+                  <h2 className="pb-4 text-[38px] text-white lg:text-[30px] md:text-[16px] sm:text-[14px] font-bold font-montserrat text-shadow-md ">
                     Our engineers will analyze your current network and advise
                     you on the deployment of infrastructure devices, services,
                     and technologies.
@@ -176,7 +176,7 @@ const Page = () => {
 
                 <motion.h3
                   {...textAnimation}
-                  className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-[#3e413e] leading-[1.3em] text-shadow-md my-2 font-montserrat"
+                  className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
                 >
                   Running a successful business requires stable, optimized,
                   reliable, up-to-date technology. With the vast amount of
@@ -186,7 +186,7 @@ const Page = () => {
 
                 <motion.h2
                   {...textAnimation}
-                  className="mb-9 mt-5 text-[20px] lg:text-[24px] md:text-[18px] sm:text-[16px]  text-[#3e413e] "
+                  className="mb-9 mt-5 text-[20px] lg:text-[24px] md:text-[18px] sm:text-[16px]  text-white "
                 >
                   We are here to provide expertise, from planning to
                   implementation, ensuring the least downtime, greatest
@@ -200,7 +200,7 @@ const Page = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: false }}
-                  className="pb-5 text-[29px] lg:text-[18px] md:text-[26px] sm:text-[22px] text-[#3e413e]"
+                  className="pb-5 text-[29px] lg:text-[18px] md:text-[26px] sm:text-[22px] text-white"
                 >
                   Capabilities
                 </motion.h4>
@@ -210,7 +210,7 @@ const Page = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1 }}
                   viewport={{ once: false }}
-                  className="pb-2 text-[18px] lg:text-[26px] md:text-[14px] sm:text-[12px] font-bold text-[#3e413e] leading-relaxed text-shadow-md"
+                  className="pb-2 text-[18px] lg:text-[26px] md:text-[14px] sm:text-[12px] font-bold text-white leading-relaxed text-shadow-md"
                 >
                   We have experience securing networks of all sizes. From small
                   doctor&apos;s offices that require HIPPA compliance, to
@@ -232,11 +232,11 @@ const Page = () => {
               className="w-full  px-6  mt-1 lg:w-[34%]  lg:block hidden"
             >
               <div className=" mb-6 rounded bg-black/40 h-[230px] bg-opacity-50">
-                <h2 className="mb-3 text-2xl  text-[#3e413e]">
+                <h2 className="mb-3 text-2xl font-bold text-white">
                   {" "}
                   Looking for a network overhaul?
                 </h2>
-                <p className="mb-10 mt-8 text-[#3e413e] font-secondary">
+                <p className="mb-10 mt-8 text-white font-secondary">
                   Our team has implemented and optimized networks of all shapes
                   and sizes to ensure business needs and deadlines are met.
                 </p>
@@ -301,7 +301,7 @@ const Page = () => {
                   viewport={{ once: true }}
                   className="p-4 w-full md:w-[250px]"
                 >
-                  <h3 className="text-[18px] text-[#5d615d]  tracking-tight leading-tight mb-3">
+                  <h3 className="text-[18px] text-white font-bold  tracking-tight leading-tight mb-3">
                     {section.title}
                   </h3>
 
@@ -314,7 +314,7 @@ const Page = () => {
                         <span className="flex items-center justify-center w-2 h-2 mr-2 text-white">
                           <MdPlayArrow className="text-xs" />
                         </span>
-                        <p className="text-[16px] text-[#5d615d]">{item}</p>
+                        <p className="text-[16px] text-white">{item}</p>
                       </li>
                     ))}
                   </ul>
@@ -326,10 +326,10 @@ const Page = () => {
           {/* Mobile CTA Section */}
           <div className="w-full px-4 lg:hidden bg-black bg-opacity-50 rounded-lg ">
             <div className="p-5">
-              <h2 className="mb-3 p-4 text-lg font-bold text-[#3e413e] leading-tight">
+              <h2 className="mb-3 p-4 text-lg font-bold text-white leading-tight">
                 Looking for a network overhaul?
               </h2>
-              <p className="mb-3 pl-4 pr-4 text-[#3e413e]  text-sm leading-relaxed">
+              <p className="mb-3 pl-4 pr-4 text-white  text-sm leading-relaxed">
                 Our team has implemented and optimized networks of all shapes
                 and sizes to ensure business needs and deadlines are met.
               </p>
@@ -339,7 +339,7 @@ const Page = () => {
      hover:bg-white/15 hover:border-[#444844]  hover:w-[280px]"
               >
                 <span className="flex justify-center items-center font-bold ">
-                  <span className="text-[#9fa39f]">NETWORK PORTFOLIO</span>
+                  <span className="text-white">NETWORK PORTFOLIO</span>
                   <AiOutlineRight className="h-[20px] font-semibold w-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </span>
               </a>
@@ -356,10 +356,10 @@ const Page = () => {
             </div>
 
             <div className="p-5">
-              <h2 className="mb-3 text-lg pl-5 pr-4 font-bold text-[#3e413e] leading-tight">
+              <h2 className="mb-3 text-lg pl-5 pr-4 font-bold text-white leading-tight">
                 Let&apos;s optimize your network
               </h2>
-              <p className="mb-3 text-[#3e413e] pl-5 text-sm leading-relaxed">
+              <p className="mb-3 text-white pl-5 text-sm leading-relaxed">
                 Like what you see? Start working with us by providing your needs
                 and details.
               </p>
@@ -369,7 +369,7 @@ const Page = () => {
      hover:bg-white/15 hover:border-[#444844] hover:w-[180px]"
               >
                 <span className="flex justify-center items-center font-semibold ">
-                  <span className="pl-5 text-[#9fa39f]">CONTACT US</span>
+                  <span className="pl-5 text-white">CONTACT US</span>
                   <AiOutlineRight className="h-[20px] font-semibold w-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </span>
               </a>
@@ -454,7 +454,7 @@ const Page = () => {
                       />
                     </div>
                     <div className="p-2 flex justify-center bg-[#001420]">
-                      <h3 className="text-xl  text-[#3e413e] tracking-tight leading-tight">
+                      <h3 className="text-xl  text-white tracking-tight leading-tight">
                         {service.title}
                       </h3>
                     </div>
