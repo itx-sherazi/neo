@@ -2,27 +2,48 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { MdPlayArrow } from "react-icons/md";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion";
 import { AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 const services = [
   {
     id: 1,
-    title: "Web Design and Hosting",
-    image:"/img/serviceimg/webdesign.webp",
+    title: "Drone Cinematography",
+    image: "/img/serviceimg/dron.png",
   },
   {
     id: 2,
-    title: "Drone Cinematography",
-    image:"/img/serviceimg/dron.png",
+    title: "Network Infrastructure",
+    image: "/img/serviceimg/network.png",
   },
   {
     id: 3,
-    title: "Network Infrastructure",
-    image:"/img/serviceimg/network.png",
+    title: "Digital Marketing",
+    image: "/img/serviceimg/digitalmarkiting.png",
   },
 ];
+const MotionDiv = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.div),
+  { ssr: false }
+);
+const MotionH1 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h1),
+  { ssr: false }
+);
+const MotionH2 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h2),
+  { ssr: false }
+);
+const MotionH3 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h3),
+  { ssr: false }
+);
+const MotionH4 = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.h4),
+  { ssr: false }
+);
 
 const Page = () => {
   const sliderRef = useRef(null);
@@ -74,209 +95,175 @@ const Page = () => {
   );
 
   const textAnimation = {
-    initial: {
-      opacity: 0,
-      y: 20,
-      scale: 0.95,
-    },
-    whileInView: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-    },
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-    viewport: {
-      once: true,
-      amount: 0.3,
-    },
+    initial: { opacity: 0, y: 20, scale: 0.95 },
+    whileInView: { opacity: 1, y: 0, scale: 1 },
+    transition: { duration: 0.8, ease: "easeOut" },
+    viewport: { once: false, amount: 0.2 },
   };
 
   return (
     <div className="min-h-screen">
       <section className="relative overflow-hidden pt-8 text-white bg-[#001420]">
         {/* background image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div
-            className="et_parallax_bg absolute inset-0 w-full"
-            style={{
-              backgroundImage:
-                'url("/img/serviceimg/bgdigital.jpg")',
-            }}
-          >
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage:
-                  "linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.9) 100%)",
-              }}
-            ></div>
-          </div>
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/img/serviceimg/bgweb.png"
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+            className="w-full h-full"
+          />
+          <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
         </div>
 
-        <div className=" relative z-10 md:mt-20 py-7 mb-12 px-4">
+        <div className="container relative z-10 mt-16 py-7 mb-12 px-4">
           <div className="flex justify-center flex-wrap">
             {/* Left Content Column */}
-            <div className="w-full lg:w-3/6 lg:mb-0">
+            <div className="w-full lg:w-[700px] lg:mb-0">
               <div className="lg:mr-[30px]">
-                <motion.h1
+                <MotionH1
                   {...textAnimation}
-                  className="relative inline-block mt-5 text-[22px] font-medium text-white font-montserrat"
+                  className="relative inline-block mt-5 text-[20px] font-medium text-white font-montserrat"
                 >
-                  <span className="relative z-10 pr-2">Build Your Brand</span>
+                  <span className="relative z-10 pr-2">BUILD MOMENTUM</span>
                   <svg
-                    className="absolute bottom-[-14px] left-0 w-[200px] h-18 text-emerald-500"
+                    className="absolute bottom-[-18px] left-0 w-full h-18 text-emerald-500"
                     viewBox="0 0 210 40"
                     fill="none"
                     stroke="#20c18c"
                     strokeWidth="2"
                   >
-                    <path
-                      d="M0.6524998052045703 29.55421153176576 C47.04466334928122 26.717087206822384, 92.08576316502536 27.58164050934886, 158.56310806702822 25.879164163954556"
-                      fill="none"
-                      stroke="#20c18c"
-                      strokeWidth="2"
+                    <motion.path
+                      d="M1.907 23.971C41.231 26.0 87.833 30.047 203.869 25.816"
+                      strokeDasharray="202"
+                      strokeDashoffset="202"
+                      initial={{ strokeDashoffset: 202 }}
+                      animate={{ strokeDashoffset: 0 }}
+                      transition={{ duration: 1 }}
                     />
-                    <path
-                      d="M156.1078063296154 24.008997510187328 C118.90908714758213 24.42131695494509, 84.21842937454542 28.8955397640214, 1.2716061221435666 28.43523649405688"
-                      fill="none"
-                      stroke="#20c18c"
-                      strokeWidth="2"
+                    <motion.path
+                      d="M199.331 26.16C143.726 23.421 84.627 22.92 -2.42 23.93"
+                      strokeDasharray="201.8"
+                      strokeDashoffset="201.8"
+                      initial={{ strokeDashoffset: 201.8 }}
+                      animate={{ strokeDashoffset: 0 }}
+                      transition={{ duration: 1 }}
                     />
                   </svg>
-                </motion.h1>
+                </MotionH1>
 
-                <motion.h1
+                <MotionH1
                   {...textAnimation}
-                  className="pb-4 text-[43px] font-extrabold text-white leading-[1.3em] font-montserrat tracking-tight mb-2 mt-3 shadow-md"
+                  className="text-[48px] font-extrabold text-white font-montserrat tracking-tight mb-2 mt-6 shadow-md"
                 >
-                  Digital Marketing
-                </motion.h1>
+                  Website Design and <br /> Hosting
+                </MotionH1>
 
-                <motion.div {...textAnimation}>
-                  <h2 className="pb-4 text-[20px] lg:text-[23px] md:text-[16px] sm:text-[14px] leading-[1.8em] text-white font-semibold font-montserrat">
-                    <p className="text-shadow-md">
-                      Our Digital Marketing team is ready to take your business
-                      to the next level.
-                    </p>
+                <MotionDiv {...textAnimation}>
+                  <h2 className="pb-2 text-[20px] lg:text-[23px] leading-[1.8em] text-white font-semibold font-montserrat">
+                    Our website designers are here to provide all digital needs
+                    for your business. We understand your website should be an
+                    essential tool used to extend your brand, designed to target
+                    the right message to your audience.
                   </h2>
-                </motion.div>
+                </MotionDiv>
 
-                <motion.h3
+                <MotionH3
                   {...textAnimation}
-                  className=" pb-3 text-[21px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-bold text-white leading-[1.3em] text-shadow-md my-2 font-montserrat"
+                  className="pb-3 pt-3 text-[21px] font-extrabold text-white text-shadow-md my-2 font-montserrat"
                 >
-                  Businesses of all kinds have seen new opportunities for growth
-                  thanks to the increasing use of social media and other web
-                  technologies, but many struggle to get their message out.
-                </motion.h3>
+                  A poorly designed, underperforming, or outdated website can
+                  make or break a business.
+                </MotionH3>
 
-                <motion.h2
+                <MotionH2
                   {...textAnimation}
-                  className="mb-9 mt-5 text-[20px] lg:text-[23px] md:text-[18px] sm:text-[16px] font-light text-white leading-[1.8em] drop-shadow-md"
+                  className="pb-6 text-[20px] font-light text-white text-shadow-md"
                 >
-                  Be heard through the noise with our marketing services. These
-                  services provide you access to our content creators,
-                  photographers, digital designers, and more. Let us handle
-                  generating traffic to your business or project, so you can
-                  focus on operations.
-                </motion.h2>
-
-                <motion.h4
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: false }}
+                  Our hosting services include lightning-fast download and
+                  upload speeds. However, we are flexible to all development
+                  needs and can configure your site to external hosting
+                  providers.
+                </MotionH2>
+                <MotionH4
+                  {...textAnimation}
                   className="pb-5 text-[29px] lg:text-[29px] md:text-[26px] sm:text-[22px] font-extrabold text-white text-shadow-md"
                 >
                   Capabilities
-                </motion.h4>
+                </MotionH4>
 
-                <motion.h2
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1 }}
-                  viewport={{ once: false }}
-                  className="pb-2 text-[18px] lg:text-[20px] md:text-[14px] sm:text-[12px] font-semibold text-white leading-relaxed text-shadow-md"
+                <MotionH2
+                  {...textAnimation}
+                  className="pb-2 text-[18px] lg:text-[22px] md:text-[14px] sm:text-[12px] text-white leading-relaxed text-shadow-md"
                 >
-                  We have experience transforming brands and can help you too!
-                  All of our clients are provided with before and after
-                  analytics to demonstrate the accelerated business growth
-                  achieved with the package selected.
-                </motion.h2>
-                <p className="text-gray-400 text-sm ml-2">
-                  (Actual Results May Vary*)
-                </p>
+                  We design your website or brand identity to reflect your
+                  brand&apos;s strategy, identity, and goals so that you occupy
+                  a prominent position in the market.
+                </MotionH2>
               </div>
             </div>
 
             {/* Right Side Column */}
-            <motion.div
+            <MotionDiv
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-full px-6 mt-1 lg:w-[34%] lg:h-full lg:block hidden"
+              className="w-full px-6 mt-16 lg:w-[35%] lg:block hidden"
             >
-              <div className="p-6 mb-6 rounded bg-black bg-opacity-50">
-                <h2 className="mb-3 text-2xl font-extrabold">
-                  {" "}
-                  We speak marketing so you don&apos;t have to.
+              <div className="p-6 mb-6 rounded bg-[#001420] bg-opacity-50">
+                <h2 className="mb-3 text-xl font-extrabold">
+                  Looking for a new web design agency?
                 </h2>
-                <p className="mb-4 mt-4 text-gray-300 font-secondary">
-                  View some of our testimonials below
+                <p className="mb-4 text-gray-300">
+                  {" "}
+                  Our catalog is an extension of our design, engineering, and
+                  delivery expertise to showcase the true capability of our
+                  team.
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
+                  className="inline-flex items-center px-6 py-2 font-semibold text-[14px] text-[#20C18C] uppercase bg-white rounded transition-all group"
                 >
-                  <span className="flex items-center font-semibold">
-                    <span>VIEW OUR PORTFOLIO</span>
-                    <AiOutlineRight className="h-4 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
-                  </span>
+                  VIEW OUR PORTFOLIO
                 </a>
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
 
           {/* Services Section */}
-          <div className="md:pl-20 md:ml-6  md:pt-6 lg:mt-14">
+          <div className="md:pl-12  md:ml-6 md:pt-6 lg:mt-14">
             <div className="grid grid-cols-1 md:flex md:gap-6">
               {[
                 {
-                  title: " Project Communication",
+                  title: "Development Process",
                   items: [
-                    "Personalized service",
-                    "Budget Planning",
-                    "Requirement Building",
-                    "Analytics Deliveries",
-                    "Targeted Campaigns",
-                    "Search Engine",
-                    "Optimization",
+                    "Research",
+                    "Discovery",
+                    "Copywriting",
+                    "UI/UX Design",
+                    "SEO",
                   ],
                 },
                 {
-                  title: "Options",
+                  title: "Technology Stack",
                   items: [
-                    "Photography",
-                    "Videography",
-                    "Social Content",
-                    "Creation",
-                    "Platform Management",
-                    "Customer",
-                    "Communication",
+                    "HTML/CSS",
+                    "SQL/NOSQL",
+                    "PHP",
+                    "Bootstrap",
+                    "Wordpress",
                     "More",
                   ],
                 },
                 {
-                  title: "Platforms",
+                  title: "Experience With",
                   items: [
-                    "Websites",
-                    "Google Ads (Business)",
-                    "Instagram",
-                    "Facebook",
-                    "Mailchimp",
+                    "Ecommerce",
+                    "Restaurants",
+                    "Medical Offices",
+                    "Small Businesses",
+                    "Real-estate",
+                    "Blogs",
                     "More",
                   ],
                 },
@@ -287,7 +274,7 @@ const Page = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, ease: "easeOut" }}
                   viewport={{ once: true }}
-                  className="p-4 w-full md:w-[270px]"
+                  className="p-4 w-full md:w-[220px]"
                 >
                   <h3 className="text-[21px] font-bold text-white font-montserrat shadow-md tracking-tight leading-tight mb-3">
                     {section.title}
@@ -312,20 +299,22 @@ const Page = () => {
               ))}
             </div>
           </div>
+
           {/* Mobile CTA Section */}
-          <div className="w-full px-4 lg:hidden bg-black bg-opacity-50 rounded-lg ">
+          <div className=" w-[300px] ml-4 lg:hidden bg-[#001420] bg-opacity-50 rounded-lg mt-6">
             <div className="p-5">
-              <h2 className="mb-3 p-4 text-lg font-bold text-gray-100 leading-tight">
-                We speak marketing so you don&apos;t have to.
+              <h2 className="mb-3 text-3xl font-bold  text-gray-100 leading-tight">
+                Looking for a new web design agency?
               </h2>
-              <p className="mb-3 pl-4 pr-4 text-gray-300 text-sm leading-relaxed">
-                View some of our testimonials below
+              <p className="mb-3 text-gray-300 text-sm leading-relaxed">
+                Our catalog showcases our design, engineering, and delivery
+                expertise.
               </p>
               <a
                 href="#"
-                className="inline-block ml-5 px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white"
+                className="inline-block px-5 py-2 text-sm font-medium text-emerald-500 uppercase bg-white rounded-md"
               >
-                VIEW OUR PORTFOLIO
+                VIEW PORTFOLIO
               </a>
             </div>
 
@@ -340,18 +329,18 @@ const Page = () => {
             </div>
 
             <div className="p-5">
-              <h2 className="mb-3 text-lg pl-5 pr-4 font-bold text-gray-100 leading-tight">
-                Let&apos;s start a marketing converstion.
+              <h2 className="mb-3  text-3xl font-bold text-gray-100 leading-tight">
+                Let&apos;s Start a web design conversation
               </h2>
-              <p className="mb-3 text-gray-300 pl-5 text-sm leading-relaxed">
-                Like what you see? Start working with us by providing your needs
-                and details.
+              <p className="mb-3 text-gray-300 text-sm leading-relaxed">
+                Let us know your requirements and start your digital
+                transformation.
               </p>
               <a
                 href="#"
-                className="inline-block px-6 ml-5 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white"
+                className="inline-block px-14 py-2 text-sm font-medium text-white bg-[#38b2ac] rounded-md"
               >
-                CONTACT US
+                Contact Us
               </a>
             </div>
           </div>
@@ -396,18 +385,18 @@ const Page = () => {
                 strokeWidth="2"
               >
                 <motion.path
-                  d="M-2.6129780051317275 30.644895129283494 C72.30817526188751 33.9999915060291, 141.3690497085347 33.253687148975686, 209.43457981487168 34.67660060115552"
-                  strokeDasharray="212.096"
-                  strokeDashoffset="212.096"
+                  d="M-0.864 32.104C79.132 36.392 157.123 35.006 210.394 31.261"
+                  strokeDasharray="211"
+                  strokeDashoffset="211"
                   animate={{ strokeDashoffset: 0 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
                 />
                 <motion.path
-                  d="M210.63320280598697 30.985419839122933 C141.52703257478063 29.601489218630086, 70.78033455151709 31.54190993947984, -0.1062767907725801 30.131298177699403"
-                  strokeDasharray="210.747"
-                  strokeDashoffset="210.747"
+                  d="M210.727 34.514C167.1 30.495 126.987 31.483 -0.62 34.382"
+                  strokeDasharray="211"
+                  strokeDashoffset="211"
                   animate={{ strokeDashoffset: 0 }}
-                  transition={{ duration: 0.4, ease: "easeOut", delay: 0.4 }}
+                  transition={{ duration: 1.5, ease: "easeOut", delay: 0.8 }}
                 />
               </svg>
             </span>
@@ -428,16 +417,17 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
-                                     <div className="relative w-full h-64"> 
-                   <Image
-                     src={service.image}
-                     alt={service.title}
-                     layout="fill"
-                     objectFit="cover"
-                     className="rounded-lg"
-                   />
-                 </div>
-                    <div className="p-2 flex justify-center bg-[#001420]">
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
+
+                    <div className="p-2 flex justify-center bg-[#001420] ">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}
                       </h3>
