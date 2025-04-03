@@ -437,15 +437,18 @@ const Page = () => {
                         Related Service
                       </span>
                     </div>
+                   
                     <div className="relative w-full h-64">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        layout="fill"
-                        objectFit="cover"
-                        className="rounded-lg"
-                      />
-                    </div>
+  <Image
+    src={service.image}
+    alt={service.title}
+    width={500}  // Specify a width according to your design
+    height={256} // Specify height (h-64 corresponds to 256px)
+    style={{ objectFit: 'cover' }} // Apply objectFit cover
+    className="rounded-lg"
+  />
+</div>
+
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">
                         {service.title}
