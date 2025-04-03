@@ -13,6 +13,7 @@ const data = [
     positionY: "50%",
     spx: "50%",
     spy: "70%",
+    path: "/services/website-design-and-hosting",
   },
   {
     name: "Network Infrastructure",
@@ -23,6 +24,8 @@ const data = [
     positionY: "50%",
     spx: "50%",
     spy: "70%",
+    path: "/services/network-infrastructure",
+    
   },
   {
     name: "Home & Office Security",
@@ -33,6 +36,7 @@ const data = [
     positionY: "50%",
     spx: "50%",
     spy: "70%",
+    path: "/services/home-and-office-security",
   },
   {
     name: "Remote Monitoring",
@@ -43,6 +47,7 @@ const data = [
     positionY: "50%",
     spx: "50%",
     spy: "70%",
+    path: "/services/remote-monitoring",
   },
 ];
 
@@ -53,6 +58,7 @@ function ServiceItem({
   positionX,
   positionY,
   scrollY,
+  path,
 }) {
   const opacity = useTransform(
     scrollY,
@@ -79,11 +85,12 @@ function ServiceItem({
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <Link
-          data-hover
-          className="~text-2xl/6xl relative text-text font-primary font-bold tracking-wide cursor-pointer"
-          href={name === "Services" ? "/services" : `/${name.toLowerCase()}`}
-        >
+       
+      <Link
+        data-hover
+        className="~text-2xl/6xl relative text-text font-primary font-bold tracking-wide cursor-pointer"
+        href={path}
+      >
           {name}
         </Link>
         <span className="text-white text-md font-secondary ">
@@ -108,6 +115,7 @@ export default function Services({ scrollY }) {
           positionX={isMobile ? item.spx : item.positionX}
           positionY={isMobile ? item.spy : item.positionY}
           scrollY={scrollY}
+             path={item.path}
         />
       ))}
     </div>

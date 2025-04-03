@@ -5,26 +5,31 @@ import { useRef } from "react";
 const data = [
   {
     name: "Smart Homes",
+    path: "/services/smart_homes",
     description:
       "Bringing today's cutting-edge technology right into your home with ease. Internet of Things allows you to control the utilities and features of your home via the Internet.",
   },
   {
     name: "Digital Marketing",
+    path: "/services/digital-marketing",
     description:
       "Our Digital Marketing team is ready to take your business to the next level. Businesses of all kinds have seen new opportunities for growth.",
   },
   {
     name: "Auditing & Pen Testing",
+    path: "/services/auditing-and-pen-testing",
     description:
       "Are your Devices and Network Compliant? Bring our Pen Testing Expertise to verify Compliance, and deliver a full audit report.",
   },
   {
     name: "Drone Cinematography",
+    path: "/services/drone-cinematography",
     description:
       "Ready to Elevate your Content to the Next Level? With so much competition, you must elevate your content to stand out at the forefront of your business.",
   },
   {
     name: "Cloud Migration Strategies",
+    path: "/services/cloud-migration",
     description:
       "Does your business need a Hybrid Cloud? Are you ready to go full cloud? Let us assist you in migrating your existing infrastructure.",
   },
@@ -59,7 +64,7 @@ const descVariants = {
 };
 
 // Child component for each service item
-function ServiceItem({ name, description, isEven }) {
+function ServiceItem({ name, description, isEven ,path }) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: false, // Animates every time it enters view
@@ -76,7 +81,7 @@ function ServiceItem({ name, description, isEven }) {
       <div className="flex flex-col gap-2 bg-transparent backdrop-blur-md border border-slate-700 shadow-xl p-4 rounded-xl lg:border-0 lg:shadow-none lg:backdrop-blur-none lg:p-0 lg:rounded-none ">
         <Link
           data-hover
-          href={name === "Services" ? "/services" : `/${name.toLowerCase()}`}
+          href={path}
           className="~text-2xl/6xl font-primary font-semibold text-text max-w-[570px]"
         >
           {name.split("").map((char, index) => (
@@ -115,6 +120,7 @@ export default function Section2({ scrollY }) {
             name={d.name}
             description={d.description}
             isEven={i % 2 === 0}
+            path={d.path}
           />
         ))}
       </div>
