@@ -120,18 +120,18 @@ const Page = () => {
           ></div>
         </div>
       </div> */}
-       <div className="absolute inset-0 z-0">
-            <Image
-              src="/img/serviceimg/bgremote.jpg"
-              alt="Background"
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-              priority
-              className="w-full h-full"
-            />
-            <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
-          </div>
+      <div className="absolute inset-0 z-0">
+  <Image
+    src="/img/serviceimg/bgremote.jpg"
+    alt="Background"
+    fill
+    priority
+    style={{ objectFit: "cover", objectPosition: "center" }}
+    className="w-full h-full"
+  />
+  <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
+</div>
+
   
       <div className="container relative z-10 mx-auto px-4 sm:px-6 py-4 sm:py-6 md:py-7 mt-6 sm:mt-8 md:mt-16 mb-6 sm:mb-8 md:mb-12">
         <div className="flex flex-col lg:flex-row justify-center flex-wrap">

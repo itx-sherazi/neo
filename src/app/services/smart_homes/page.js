@@ -114,19 +114,17 @@ const Page = () => {
     ></div>
   </div>
 </div> */}
-  <div className="absolute inset-0 z-0">
-                    <Image
-                      src="/img/serviceimg/bgsmarthome.jpg"
-                      alt="Background"
-                      layout="fill"
-                      objectFit="cover"
-                      objectPosition="center"
-                      priority
-                      className="w-full h-full"
-                    />
-                    <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
-                  </div>
-
+ <div className="absolute inset-0 z-0">
+  <Image
+    src="/img/serviceimg/bgsmarthome.jpg"
+    alt="Background"
+    fill
+    priority
+    style={{ objectFit: "cover", objectPosition: "center" }}
+    className="w-full h-full"
+  />
+  <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
+</div>
 
 
 

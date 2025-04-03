@@ -107,17 +107,17 @@ const Page = () => {
   <section className="relative overflow-hidden pt-4 md:pt-8 text-white bg-[#001420]">
     {/* Background image  */}
     <div className="absolute inset-0 z-0">
-      <Image
-        src="/img/serviceimg/bgweb.png"
-        alt="Background"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        priority
-        className="w-full h-full"
-      />
-      <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
-    </div>
+  <Image
+    src="/img/serviceimg/bgweb.png"
+    alt="Background"
+    fill
+    priority
+    style={{ objectFit: "cover", objectPosition: "center" }}
+    className="w-full h-full"
+  />
+  <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
+</div>
+
 
     <div className="container relative z-10 mx-auto px-4 sm:px-6 py-4 sm:py-7 mt-8 md:mt-16 mb-8 md:mb-12">
       {/* Flex container that changes to column on mobile */}
