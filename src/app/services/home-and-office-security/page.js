@@ -381,6 +381,7 @@ const Page = () => {
           </motion.div>
         </div>
       </section>
+  
       {/* Carousal Section */}
       <section className="py-12 bg-[#001420] text-white">
         <div className="max-w-6xl mx-auto px-4">
