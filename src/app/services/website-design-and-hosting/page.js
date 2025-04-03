@@ -105,7 +105,7 @@ const Page = () => {
     
     <div className="min-h-screen w-full">
   <section className="relative overflow-hidden pt-4 md:pt-8 text-white bg-[#001420]">
-    {/* Background image - made responsive for all screen sizes */}
+    {/* Background image  */}
     <div className="absolute inset-0 z-0">
       <Image
         src="/img/serviceimg/bgweb.png"
