@@ -112,7 +112,7 @@ const Page = () => {
         alt="Background"
         layout="fill"
         objectFit="cover"
-        objectPosition="center right"
+        objectPosition="center"
         priority
         className="w-full h-full"
       />

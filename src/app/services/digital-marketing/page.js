@@ -118,14 +118,26 @@ const Page = () => {
     <div className="min-h-screen w-full">
       <section className="relative overflow-hidden pt-8 text-white bg-[#001420]">
         {/* Background Section */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* <div className="absolute inset-0 z-0 overflow-hidden">
           <div
             className="absolute inset-0 w-full bg-cover bg-center"
             style={{ backgroundImage: 'url("/img/serviceimg/bgdigital.jpg")' }}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/90" />
           </div>
-        </div>
+        </div> */}
+         <div className="absolute inset-0 z-0">
+                    <Image
+                      src="/img/serviceimg/bgdigital.jpg"
+                      alt="Background"
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                      priority
+                      className="w-full h-full"
+                    />
+                    <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
+                  </div>
 
         <div className="relative z-10 md:mt-20 py-7 mb-12 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row justify-center gap-8 lg:gap-12">

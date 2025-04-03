@@ -105,7 +105,7 @@ const Page = () => {
     <div className="min-h-screen w-full">
     <section className="relative overflow-hidden pt-4 sm:pt-6 md:pt-8 text-white bg-[#001420]">
       {/* Background image - optimized for all screen sizes */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* <div className="absolute inset-0 z-0 overflow-hidden">
         <div
           className="et_parallax_bg absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
@@ -119,7 +119,19 @@ const Page = () => {
             }}
           ></div>
         </div>
-      </div>
+      </div> */}
+       <div className="absolute inset-0 z-0">
+            <Image
+              src="/img/serviceimg/bgremote.jpg"
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              priority
+              className="w-full h-full"
+            />
+            <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
+          </div>
   
       <div className="container relative z-10 mx-auto px-4 sm:px-6 py-4 sm:py-6 md:py-7 mt-6 sm:mt-8 md:mt-16 mb-6 sm:mb-8 md:mb-12">
         <div className="flex flex-col lg:flex-row justify-center flex-wrap">

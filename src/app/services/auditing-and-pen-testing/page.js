@@ -120,7 +120,7 @@ const Page = () => {
     <div className="min-h-screen w-full">
       <section className="relative overflow-hidden pt-8 text-white bg-black">
         {/* background image */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* <div className="absolute inset-0 z-0 overflow-hidden">
           <div
             className="et_parallax_bg absolute inset-0 w-full"
             style={{
@@ -140,7 +140,19 @@ const Page = () => {
               }}
             ></div>
           </div>
-        </div>
+        </div> */}
+         <div className="absolute inset-0 z-0">
+                    <Image
+                      src="/img/serviceimg/bgauditing.jpg"
+                      alt="Background"
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                      priority
+                      className="w-full h-full"
+                    />
+                    <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
+                  </div>
 
         <div className=" relative z-10 md:mt-20 py-7 mb-12 px-4">
           <div className="flex justify-center flex-wrap">
@@ -247,9 +259,9 @@ const Page = () => {
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="w-full px-6 mt-1 lg:w-[34%] lg:block hidden"
+              className="w-full px-10  mt-1 lg:w-[38%] lg:block hidden"
             >
-              <div className="mb-6 rounded bg-black/40 h-[230px] bg-opacity-50">
+              <div className="mb-6 rounded pl-5 pt-4 pb-4 bg-black/40 h-[230px] bg-opacity-50">
                 <h2 className="mb-3 text-2xl font-bold text-white">
                   Looking for Audit or Pen Test Reports?
                 </h2>
