@@ -120,34 +120,21 @@ const Page = () => {
     <div className="min-h-screen w-full">
       <section className="relative overflow-hidden pt-8 text-white bg-[#001420]">
         {/* Background Image with Enhanced Responsiveness */}
-        {/* <div className="absolute inset-0 z-0 overflow-hidden">
-          <div
-            className="et_parallax_bg absolute inset-0 w-full"
-            style={{
-              backgroundImage: 'url("/img/serviceimg/bghomesecurity.jpg")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.9)] to-[rgba(0,0,0,0.9)]"></div>
-          </div>
-        </div> */}
-         <div className="absolute inset-0 z-0">
-  <Image
-    src="/img/serviceimg/bghomesecurity.jpg"
-    alt="Background"
-    fill
-    priority
-    style={{ objectFit: "cover", objectPosition: "center" }}
-    className="w-full h-full"
-  />
-  <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
-</div>
-
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/img/serviceimg/bghomesecurity.jpg"
+            alt="Background"
+            fill
+            priority
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            className="w-full h-full"
+          />
+          <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
+        </div>
 
         <div className="relative z-10 md:mt-20 py-7 mb-12 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:flex-nowrap justify-center md:items-start">
-            {/* Left Content Column - Adjusted for Responsiveness */}
+            {/* Left Content Column */}
             <div className="w-full md:w-3/6 lg:w-2/5 xl:w-1/2 md:pr-8">
               <div className="md:max-w-[600px]">
                 <MotionH1
@@ -155,7 +142,7 @@ const Page = () => {
                   className="relative inline-block mt-5 text-lg sm:text-xl md:text-2xl font-medium text-white font-montserrat"
                 >
                   <span className="relative z-10 pr-2">PEACE OF MIND</span>
-                  {/* SVG adjusted for responsive sizing */}
+          
                   <svg
                     className="absolute bottom-[-14px] left-0 w-[160px] sm:w-[180px] md:w-[200px] h-18 text-emerald-500"
                     viewBox="0 0 210 40"
@@ -199,7 +186,7 @@ const Page = () => {
                   Covered.
                 </MotionH2>
 
-                {/* Responsive Capabilities Section */}
+                
                 <MotionH4
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -223,7 +210,7 @@ const Page = () => {
               </div>
             </div>
 
-            {/* Right Side Column - Enhanced Responsiveness */}
+            {/* Right Side Column  */}
             <MotionDiv
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -428,15 +415,15 @@ const Page = () => {
                       </span>
                     </div>
                     <div className="relative w-full h-64">
-  <Image
-    src={service.image}
-    alt={service.title}
-    width={500}  
-    height={256} 
-    style={{ objectFit: 'cover' }} // Apply objectFit cover
-    className="rounded-lg"
-  />
-</div>
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        width={500}
+                        height={256}
+                        style={{ objectFit: "cover" }} 
+                        className="rounded-lg"
+                      />
+                    </div>
 
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">

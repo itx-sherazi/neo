@@ -11,6 +11,7 @@ import CameraRig from "./experience/CameraRig";
 import { Logo } from "./experience/model/Logo";
 import TechnoLogo from "./experience/TechnoLogo";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import FireflyCanvas from "@/components/bgEffect/FireflyCanvas";
 
 export default function Scene({ scrollY, scrollY2 }) {
   const [eventSource, setEventSource] = useState(null);
@@ -22,7 +23,11 @@ export default function Scene({ scrollY, scrollY2 }) {
   const isMobile = useMediaQuery("(max-width: 768px)", false);
 
   return (
-    <Canvas
+  <div className="">
+    <FireflyCanvas />
+
+
+      <Canvas
       shadows
       dpr={[1, 1.5]}
       gl={{ antialias: false }}
@@ -52,5 +57,6 @@ export default function Scene({ scrollY, scrollY2 }) {
       <ambientLight intensity={0.5} />
       <Environment preset="warehouse" />
     </Canvas>
+  </div>
   );
 }

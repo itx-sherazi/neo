@@ -13,6 +13,8 @@ import useTalhaStore from "@/store/useStore";
 import { useScroll, useSpring } from "framer-motion";
 import Lenis from "lenis";
 import React, { useEffect, useRef } from "react";
+import FireflyCanvas from "@/components/bgEffect/FireflyCanvas";
+
 
 export default function Home() {
   const { isLoading, setIsLoading } = useTalhaStore();
@@ -78,33 +80,45 @@ export default function Home() {
 
   return (
     <>
+    <FireflyCanvas/>
+
       {isLoading && <LoadingScreen setIsLoading={setIsLoading} />}
       <Scene scrollY={scrollYProgress} scrollY2={smoothScrollY2} />
 
-      <main className="relative min-h-screen bg-bg bg-custom-gradient ">
-        <div className="container flex flex-col items-center justify-center h-[90vh] relative logo">
-          <h2 className="absolute top-[70%] left-1/2 -translate-x-1/2 -translate-y-1/2 ~text-xl/4xl font-nunito font-bold text-center">
-            Embracing Todays Technology
-          </h2>
-          <Button className="absolute top-[80%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-            Get Started
-          </Button>
+      <main className="relative min-h-screen bg-bg bg-custom-gradient overflow-hidden">
+  
+  {/* Firefly effect only for this section */}
+  <div className="absolute top-0 left-0 w-full h-full  pointer-events-none">
+    <FireflyCanvas />
+  </div>
 
-          <div className="absolute top-[93%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex gap-2 items-center">
-            <div>
-              <p className="~text-lg/3xl font-primary text-center">Scroll</p>
-            </div>
-            <div className="scrolldown mt-5" style={{ "--color": "skyblue" }}>
-              <div className="chevrons">
-                <div className="chevrondown"></div>
-                <div className="chevrondown"></div>
-              </div>
-            </div>
-            <p className="~text-lg/3xl font-primary text-center">Down</p>
-          </div>
+  {/* Content on top of firefly */}
+  <div className="container flex flex-col items-center justify-center h-[90vh] relative z-10 logo">
+    <h2 className="absolute top-[70%] left-1/2 -translate-x-1/2 -translate-y-1/2 ~text-xl/4xl font-nunito font-bold text-center">
+      Embracing Todays Technology
+    </h2>
+    <Button className="absolute top-[80%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+      Get Started
+    </Button>
+
+    <div className="absolute top-[93%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex gap-2 items-center">
+      <div>
+        <p className="~text-lg/3xl font-primary text-center">Scroll</p>
+      </div>
+      <div className="scrolldown mt-5" style={{ "--color": "skyblue" }}>
+        <div className="chevrons">
+          <div className="chevrondown"></div>
+          <div className="chevrondown"></div>
         </div>
-        <Marque />
-      </main>
+      </div>
+      <p className="~text-lg/3xl font-primary text-center">Down</p>
+    </div>
+  </div>
+
+  <Marque />
+
+</main>
+
       <SerText />
       <div ref={section1} className="relative">
         <Section1 />

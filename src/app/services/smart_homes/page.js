@@ -99,21 +99,6 @@ const Page = () => {
     <div className="min-h-screen w-full">
       <section className="relative overflow-hidden pt-8 text-white ">
         {/* background image */}
-        {/* <div className="absolute inset-0 z-0 overflow-hidden">
-  <div
-    className="et_parallax_bg absolute inset-0 w-full"
-    style={{
-      backgroundImage: 'url("/img/serviceimg/bgsmarthome.jpg")',
-    }}
-  >
-    <div 
-      className="absolute inset-0 et_parallax_gradient"
-      style={{
-        backgroundImage: 'linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.9) 100%)' // Updated gradient
-      }}
-    ></div>
-  </div>
-</div> */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/img/serviceimg/bgsmarthome.jpg"
@@ -439,9 +424,9 @@ const Page = () => {
                       <Image
                         src={service.image}
                         alt={service.title}
-                        width={500} // Specify a width according to your design
-                        height={256} // Specify height (h-64 corresponds to 256px)
-                        style={{ objectFit: "cover" }} // Apply objectFit cover
+                        width={500}
+                        height={256}
+                        style={{ objectFit: "cover" }}
                         className="rounded-lg"
                       />
                     </div>

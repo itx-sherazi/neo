@@ -99,34 +99,17 @@ const Page = () => {
     <div className="min-h-screen w-full">
       <section className="relative overflow-hidden pt-8 text-white bg-black">
         {/* background image */}
-        {/* <div className="absolute inset-0 z-0 overflow-hidden">
-          <div
-            className="et_parallax_bg absolute inset-0 w-full"
-            style={{
-              backgroundImage: 'url("/img/serviceimg/bgcloud.jpg")',
-            }}
-          >
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage:
-                  "linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.8) 100%)", // Updated gradient
-              }}
-            ></div>
-          </div>
-        </div> */}
         <div className="absolute inset-0 z-0">
-  <Image
-    src="/img/serviceimg/bgcloud.jpg"
-    alt="Background"
-    fill
-    priority
-    style={{ objectFit: "cover", objectPosition: "center" }}
-    className="w-full h-full"
-  />
-  <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
-</div>
-
+          <Image
+            src="/img/serviceimg/bgcloud.jpg"
+            alt="Background"
+            fill
+            priority
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            className="w-full h-full"
+          />
+          <div className="absolute inset-0 bg-[#001420] bg-opacity-80"></div>
+        </div>
 
         <div className=" relative z-10 md:mt-20 py-7 mb-12 px-4">
           <div className="flex justify-center flex-wrap">
@@ -440,15 +423,15 @@ const Page = () => {
                       </span>
                     </div>
                     <div className="relative w-full h-64">
-  <Image
-    src={service.image}
-    alt={service.title}
-    width={500}  // Specify a width according to your design
-    height={256} // Specify height (h-64 corresponds to 256px)
-    style={{ objectFit: 'cover' }} // Apply objectFit cover
-    className="rounded-lg"
-  />
-</div>
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        width={500}
+                        height={256} 
+                        style={{ objectFit: "cover" }} 
+                        className="rounded-lg"
+                      />
+                    </div>
 
                     <div className="p-2 flex justify-center bg-[#001420]">
                       <h3 className="text-2xl font-bold text-white tracking-tight leading-tight">

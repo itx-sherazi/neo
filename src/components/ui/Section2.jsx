@@ -64,7 +64,7 @@ const descVariants = {
 };
 
 // Child component for each service item
-function ServiceItem({ name, description, isEven ,path }) {
+function ServiceItem({ name, description, isEven, path }) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: false, // Animates every time it enters view
