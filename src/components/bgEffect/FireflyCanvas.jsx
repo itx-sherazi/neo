@@ -1,4 +1,3 @@
-// components/utils/FireflyCanvas.jsx
 "use client";
 import React, { useEffect, useRef } from "react";
 
@@ -16,7 +15,7 @@ export default function FireflyCanvas() {
       constructor() {
         this.x = Math.random() * w;
         this.y = Math.random() * h;
-        this.s = Math.random() * 2 ;
+        this.s = Math.random() * 2;
         this.ang = Math.random() * 2 * Math.PI;
         this.v = (this.s * this.s) / 4;
       }
@@ -66,28 +65,33 @@ export default function FireflyCanvas() {
 
     loop();
 
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       w = canvas.width = window.innerWidth;
       h = canvas.height = window.innerHeight;
-    });
+    };
+
+    window.addEventListener("resize", handleResize);
 
     // Blur effect
     canvas.style.filter = "blur(1px)";
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
-<canvas
-  ref={canvasRef}
-  style={{
-    position: "absolute",  // Absolute positioning
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    zIndex: 1, // Set z-index to 1 so it's above the background but below other elements
-    pointerEvents: "none", // Disable user interaction with the canvas
-  }}
-/>
-
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: "fixed", 
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 1, 
+        pointerEvents: "none", 
+      }}
+    />
   );
 }

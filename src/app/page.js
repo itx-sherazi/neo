@@ -86,11 +86,6 @@ export default function Home() {
       <Scene scrollY={scrollYProgress} scrollY2={smoothScrollY2} />
 
       <main className="relative min-h-screen bg-bg bg-custom-gradient overflow-hidden">
-  
-  {/* Firefly effect only for this section */}
-  <div className="absolute top-0 left-0 w-full h-full  pointer-events-none">
-    <FireflyCanvas />
-  </div>
 
   {/* Content on top of firefly */}
   <div className="container flex flex-col items-center justify-center h-[90vh] relative z-10 logo">
