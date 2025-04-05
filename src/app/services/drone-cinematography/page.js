@@ -234,7 +234,7 @@ const Page = () => {
                   and Videos for your next project.
                 </p>
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center px-6 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white group relative"
                 >
                   <span className="flex items-center ">
@@ -324,7 +324,7 @@ const Page = () => {
                 Videos for your next project.
               </p>
               <a
-                href="#"
+                href="/contact"
                 className="inline-block ml-5 px-4 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white"
               >
                 INQUIRE
@@ -350,7 +350,7 @@ const Page = () => {
                 and details.
               </p>
               <a
-                href="#"
+                href="/contact"
                 className="inline-block px-6 ml-5 py-2 font-[500] text-[14px] text-[#20C18C] uppercase transition-all rounded bg-white"
               >
                 CONTACT US
@@ -367,7 +367,7 @@ const Page = () => {
             className="lg:block hidden pt-8"
           >
             <a
-              href="#"
+              href="/contact"
               className="w-full lg:w-[1000px] h-10 items-center justify-center flex mx-auto py-2 text-[14px] font-[500] text-white transition-all rounded bg-[#38b2ac] hover:bg-[#38b2ac] group relative"
             >
               <span className="flex justify-center items-center gap-2">

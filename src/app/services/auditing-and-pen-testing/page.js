@@ -249,7 +249,7 @@ const Page = () => {
                   handle it all.
                 </p>
                 <a
-                  href="#"
+                  href="/contact"
                   className="py-2 w-[150px] ml-5 flex items-center justify-center bg-[#009999] text-white transition-all duration-300 rounded  group relative "
                 >
                   <span className="flex justify-center items-center font-semibold">
@@ -344,7 +344,7 @@ const Page = () => {
                 handle it all.
               </p>
               <a
-                href="#"
+                href="/contact"
                 className=" py-2 ml-4  w-[100px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-white group relative 
      hover:bg-white/15 hover:border-[#444844] hover:w-[180px]"
               >
@@ -374,7 +374,7 @@ const Page = () => {
                 and details.
               </p>
               <a
-                href="#"
+                href="/contact"
                 className=" py-2 ml-4  w-[140px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-white group relative 
      hover:bg-white/15 hover:border-[#444844] hover:w-[180px]"
               >
@@ -389,7 +389,7 @@ const Page = () => {
           {/* Desktop Contact Button */}
           <div className="lg:block hidden  ml-28">
             <a
-              href="#"
+              href="/contact"
               className=" py-3 w-[140px] flex items-center justify-center text-white transition-all duration-300 rounded bg-[#38b2ac] group relative 
 "
             >

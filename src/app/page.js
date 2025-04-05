@@ -80,7 +80,7 @@ export default function Home() {
 
   return (
     <>
-    <FireflyCanvas/>
+    {/* <FireflyCanvas/> */}
 
       {isLoading && <LoadingScreen setIsLoading={setIsLoading} />}
       <Scene scrollY={scrollYProgress} scrollY2={smoothScrollY2} />
@@ -88,11 +88,11 @@ export default function Home() {
       <main className="relative min-h-screen bg-bg bg-custom-gradient overflow-hidden">
 
   {/* Content on top of firefly */}
-  <div className="container flex flex-col items-center justify-center h-[90vh] relative z-10 logo">
-    <h2 className="absolute top-[70%] left-1/2 -translate-x-1/2 -translate-y-1/2 ~text-xl/4xl font-nunito font-bold text-center">
+  <div className="container flex flex-col items-center justify-center h-[90vh] relative  logo">
+    <h2 className="absolute z-0 top-[70%] left-1/2 -translate-x-1/2 -translate-y-1/2 ~text-xl/4xl font-nunito font-bold text-center">
       Embracing Todays Technology
     </h2>
-    <Button className="absolute top-[80%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+    <Button className="absolute top-[80%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
       Get Started
     </Button>
 

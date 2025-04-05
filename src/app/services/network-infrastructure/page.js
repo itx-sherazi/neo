@@ -354,7 +354,7 @@ const Page = () => {
                 and details.
               </p>
               <a
-                href="#"
+                href="/contact"
                 className=" py-2 ml-4 mt-5 w-[140px] flex items-center justify-center text-[#9fa39f] transition-all duration-300 rounded border-2 border-[#9fa39f] group relative 
      hover:bg-white/15 hover:border-[#444844] hover:w-[180px]"
               >
@@ -369,7 +369,7 @@ const Page = () => {
           {/* Desktop Contact Button */}
           <div className="lg:block hidden  ml-28">
             <a
-              href="#"
+              href="/contact"
               className=" py-3 w-[140px] flex items-center justify-center text-white transition-all duration-300 rounded border-2 border-white group relative 
     bg-white/10 hover:bg-white/15   hover:border-none hover:w-[180px]"
             >

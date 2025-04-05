@@ -340,7 +340,7 @@ const Page = () => {
                 transformation.
               </p>
               <a
-                href="#"
+                href="/contact"
                 className="inline-block px-4 sm:px-14 py-2 text-sm font-medium text-white bg-[#38b2ac] rounded-md"
               >
                 Contact Us
@@ -357,7 +357,7 @@ const Page = () => {
             className="hidden lg:block pt-8"
           >
             <a
-              href="#"
+              href="/contact"
               className="w-full max-w-[1000px] h-10 items-center justify-center flex mx-auto py-2 text-[14px] font-[500] text-white transition-all rounded bg-[#38b2ac] hover:bg-[#38b2ac] group relative"
             >
               <span className="flex justify-center items-center gap-2">

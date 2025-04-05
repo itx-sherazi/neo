@@ -55,7 +55,9 @@ function MobileMenu() {
                 <Link
                   href="/"
                   className={`block px-4 py-2 transition-colors duration-300 ${
-                    pathname === "/" ? "text-teal-300" : "text-white hover:text-gray-300"
+                    pathname === "/"
+                      ? "text-teal-300"
+                      : "text-white hover:text-gray-300"
                   }`}
                   onClick={() => setOpen(false)}
                 >
@@ -66,7 +68,9 @@ function MobileMenu() {
                 <Link
                   href="/about"
                   className={`block px-4 py-2 transition-colors duration-300 ${
-                    pathname === "/about" ? "text-teal-300" : "text-white hover:text-gray-300"
+                    pathname === "/about"
+                      ? "text-teal-300"
+                      : "text-white hover:text-gray-300"
                   }`}
                   onClick={() => setOpen(false)}
                 >
@@ -76,19 +80,22 @@ function MobileMenu() {
               <li>
                 <div
                   className={`flex items-center justify-center gap-1 px-4 py-2 cursor-pointer transition-colors duration-300 ${
-                    pathname === "/services" ? "text-teal-300" : "text-white hover:text-gray-300"
+                    pathname === "/services"
+                      ? "text-teal-300"
+                      : "text-white hover:text-gray-300"
                   }`}
                   onClick={() => setShowServices((prev) => !prev)}
                 >
                   Services
-                  
                 </div>
               </li>
               <li>
                 <Link
                   href="/contact"
                   className={`block px-4 py-2 transition-colors duration-300 ${
-                    pathname === "/contact" ? "text-teal-300" : "text-white hover:text-gray-300"
+                    pathname === "/contact"
+                      ? "text-teal-300"
+                      : "text-white hover:text-gray-300"
                   }`}
                   onClick={() => setOpen(false)}
                 >
@@ -132,13 +139,19 @@ function MobileMenu() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.1 }}
                         >
-                          <Link href={item.path} onClick={() => {
-                            setShowServices(false);
-                            setOpen(false);
-                          }}>
+                          <Link
+                            href={item.path}
+                            onClick={() => {
+                              setShowServices(false);
+                              setOpen(false);
+                            }}
+                          >
                             <div className="bg-[#001420]  p-4 rounded-lg transition-all duration-300">
                               <p className="flex items-center gap-2 font-secondary font-medium text-white mb-2">
-                                <span className="text-teal-300">{item.icon}</span> {item.name}
+                                <span className="text-teal-300">
+                                  {item.icon}
+                                </span>{" "}
+                                {item.name}
                               </p>
                               <p className="text-sm text-gray-400">
                                 {item.description}

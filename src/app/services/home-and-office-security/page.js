@@ -226,7 +226,7 @@ const Page = () => {
                   needs.
                 </p>
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center px-6 py-2 text-sm md:text-base font-medium text-[#20C18C] uppercase transition-all rounded bg-white hover:bg-gray-50"
                 >
                   <span className="flex items-center">
@@ -311,7 +311,7 @@ const Page = () => {
                   needs.
                 </p>
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center px-6 py-2 text-sm font-medium text-[#20C18C] bg-white rounded"
                 >
                   INQUIRE
@@ -334,7 +334,7 @@ const Page = () => {
                   Lets Secure Your Property
                 </h2>
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center px-6 py-2 text-sm font-medium text-[#20C18C] bg-white rounded"
                 >
                   CONTACT US
@@ -352,7 +352,7 @@ const Page = () => {
             className="hidden md:block mt-12 max-w-4xl mx-auto"
           >
             <a
-              href="#"
+              href="/contact"
               className="flex items-center justify-center px-8 py-3 text-sm md:text-base font-medium text-white bg-[#38b2ac] hover:bg-[#2e968f] rounded-lg transition-colors"
             >
               Contact Us

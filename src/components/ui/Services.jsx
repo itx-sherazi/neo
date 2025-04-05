@@ -104,8 +104,18 @@ function ServiceItem({
 export default function Services({ scrollY }) {
   const isMobile = useMediaQuery("(max-width: 768px)", false);
 
+
+  const containerOpacity = useTransform(scrollY, [0.05, 0.06, 0.94, 0.95], [0, 1, 1, 0]);
+  const containerPointerEvents = useTransform(scrollY, [0.05, 0.06, 0.94, 0.95], ["none", "auto", "auto", "none"]);
+
   return (
-    <div className="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center z-10">
+    <motion.div
+      className="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center z-10"
+      style={{
+        opacity: containerOpacity,
+        pointerEvents: containerPointerEvents,
+      }}
+    >
       {data.map((item, index) => (
         <ServiceItem
           key={index}
@@ -115,9 +125,9 @@ export default function Services({ scrollY }) {
           positionX={isMobile ? item.spx : item.positionX}
           positionY={isMobile ? item.spy : item.positionY}
           scrollY={scrollY}
-             path={item.path}
+          path={item.path}
         />
       ))}
-    </div>
+    </motion.div>
   );
 }
